@@ -1,0 +1,54 @@
+/* At Home Comfort Assisted Living — Global Styles */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(196, 154, 82, 0.25);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+:root {
+  --desk-show: flex;
+}
+
+.desk-nav {
+  display: flex !important;
+}
+.mob-toggle {
+  display: none !important;
+}
+.mob-cta {
+  display: none !important;
+}
+
+@media (max-width: 860px) {
+  .desk-nav {
+    display: none !important;
+  }
+  .mob-toggle {
+    display: flex !important;
+  }
+  .mob-cta {
+    display: flex !important;
+  }
+  :root {
+    --desk-show: none;
+  }
+}
