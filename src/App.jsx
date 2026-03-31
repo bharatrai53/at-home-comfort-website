@@ -53,8 +53,8 @@ function ImgPlaceholder({ src, alt = "", aspect = "4/3", radius = T.radiusLg, st
 }
 function IconCard({ icon, label, delay = 0 }) {
   const [h, setH] = useState(false);
-  return <Reveal delay={delay}><div onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{ background: T.white, borderRadius: T.radiusLg, padding: "32px 20px", textAlign: "center", border: `1px solid ${h?T.gold:T.border}`, boxShadow: h?"0 8px 28px rgba(196,154,82,0.1)":"0 1px 4px rgba(0,0,0,0.03)", transition: "all 0.35s ease", cursor: "default", transform: h?"translateY(-3px)":"none" }}>
-    <div style={{ width: 56, height: 56, borderRadius: 16, background: T.goldMuted, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px", color: T.gold }}>{icon}</div>
+  return <Reveal delay={delay} style={{ height: "100%" }}><div onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{ background: T.white, borderRadius: T.radiusLg, padding: "32px 20px", textAlign: "center", border: `1px solid ${h?T.gold:T.border}`, boxShadow: h?"0 8px 28px rgba(196,154,82,0.1)":"0 1px 4px rgba(0,0,0,0.03)", transition: "all 0.35s ease", cursor: "default", transform: h?"translateY(-3px)":"none", height: "100%", boxSizing: "border-box", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+    <div style={{ width: 56, height: 56, borderRadius: 16, background: T.goldMuted, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px", color: T.gold, flexShrink: 0 }}>{icon}</div>
     <span style={{ fontFamily: F.body, fontSize: 14, fontWeight: 600, color: T.navy }}>{label}</span>
   </div></Reveal>;
 }
@@ -172,14 +172,12 @@ function Navigation({ active, setActive }) {
   const navItems = ["Home", "About", "Care & Services", "Virtual Tour", "Admissions", "FAQs"];
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 30); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
   return <>
-    <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, background: scrolled?"rgba(253,251,248,0.95)":"rgba(26,39,68,0.65)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", borderBottom: scrolled?`1px solid ${T.border}`:"1px solid rgba(255,255,255,0.08)", transition: "all 0.4s ease", padding: scrolled?"10px 0":"16px 0" }}>
+    <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, background: scrolled?"rgba(253,251,248,0.95)":"rgba(26,39,68,0.65)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", borderBottom: scrolled?`1px solid ${T.border}`:"1px solid rgba(255,255,255,0.08)", transition: "all 0.4s ease", padding: scrolled?"4px 0":"16px 0" }}>
       <div style={{ maxWidth: 1160, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <div style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: 10 }} onClick={()=>setActive("Home")}>
-          <div style={{ width: 36, height: 36, borderRadius: 10, background: `linear-gradient(135deg, ${T.navy}, ${T.navyLight})`, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={T.gold} strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </div>
+        <div style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: 8 }} onClick={()=>setActive("Home")}>
+          <img src="/rmvbckgrnd.png" alt="" style={{ height: scrolled ? 44 : 52, width: "auto", display: "block", transition: "height 0.4s ease" }} />
           <div style={{ lineHeight: 1.15 }}>
-            <div style={{ fontFamily: F.display, fontSize: 17, fontWeight: 700, color: scrolled?T.navy:T.white }}>At Home Comfort</div>
+            <div style={{ fontFamily: F.display, fontSize: 17, fontWeight: 700, color: scrolled ? T.navy : T.white, transition: "color 0.4s ease" }}>At Home Comfort</div>
             <div style={{ fontFamily: F.body, fontSize: 9, fontWeight: 600, color: T.gold, letterSpacing: "0.2em", textTransform: "uppercase" }}>Assisted Living</div>
           </div>
         </div>
@@ -395,7 +393,13 @@ function HomePage() {
 // PAGE: ABOUT
 function AboutPage() {
   return <>
-    <PageHero title="Our Story" subtitle="A home built on love, inspired by family." image="https://images.unsplash.com/photo-1559526324-593bc073d938?w=1200&q=80" />
+    <div style={{ position: "relative", width: "100%", minHeight: 380, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", background: `linear-gradient(to bottom, #3D2010 0%, #8B5220 35%, ${T.gold} 65%, #F0DFB8 85%, ${T.offWhite} 100%)` }}>
+      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 65% 35%, rgba(255,215,100,0.3) 0%, transparent 60%)" }} />
+      <div style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "100px 24px 60px", maxWidth: 640 }}>
+        <Reveal><GoldDivider width={36} /><h1 style={{ fontFamily: F.display, fontSize: "clamp(32px, 5vw, 50px)", fontWeight: 600, color: T.white, lineHeight: 1.15, margin: "20px 0 14px", textShadow: "0 2px 20px rgba(0,0,0,0.25)" }}>Our Story</h1>
+        <p style={{ fontFamily: F.body, fontSize: 17, color: "rgba(255,255,255,0.85)", lineHeight: 1.65, maxWidth: 480, margin: "0 auto", textShadow: "0 1px 8px rgba(0,0,0,0.15)" }}>A home built on love, inspired by family.</p></Reveal>
+      </div>
+    </div>
     <Section bg={T.offWhite}><div style={{ display: "flex", gap: 56, flexWrap: "wrap", alignItems: "center" }}>
       <div style={{ flex: "1 1 460px", minWidth: 280 }}>
         <Reveal><SectionLabel text="From Our Founder" align="left" /><h2 style={{ fontFamily: F.display, fontSize: "clamp(28px, 3.5vw, 36px)", fontWeight: 600, color: T.navy, lineHeight: 1.2, margin: "10px 0 8px" }}>A Home Inspired by Kishan</h2><GoldDivider width={36} /></Reveal>
@@ -405,7 +409,14 @@ function AboutPage() {
           <p style={{ fontFamily: F.body, fontSize: 16, color: T.textBody, lineHeight: 1.85 }}>Seeing how she was cared for at home shaped my belief that senior care should never feel clinical or impersonal. It should feel like family. It should feel like home.</p>
         </Reveal>
       </div>
-      <Reveal delay={0.15} style={{ flex: "1 1 380px", minWidth: 280 }}><ImgPlaceholder aspect="4/5" radius={T.radiusLg} /><p style={{ fontFamily: F.body, fontSize: 12, color: T.textLight, textAlign: "center", marginTop: 10, fontStyle: "italic" }}>Photo placeholder — Parminder & family</p></Reveal>
+      <Reveal delay={0.15} style={{ flex: "1 1 380px", minWidth: 280 }}>
+        <div style={{ position: "relative", borderRadius: T.radiusLg, overflow: "hidden", boxShadow: "0 20px 60px rgba(26,39,68,0.15)", border: `3px solid ${T.goldAccent}` }}>
+          <img src="/IMG_1960.JPEG" alt="Parminder with her grandmother Kishan" style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "4/5" }} />
+          <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "linear-gradient(0deg, rgba(26,39,68,0.85) 0%, transparent 100%)", padding: "32px 20px 18px" }}>
+            <p style={{ fontFamily: F.display, fontSize: 15, color: T.white, fontStyle: "italic", margin: 0, textAlign: "center" }}>Parminder with her grandmother, Kishan</p>
+          </div>
+        </div>
+      </Reveal>
     </div></Section>
     <Section bg={T.cream}><div style={{ maxWidth: 680, margin: "0 auto", textAlign: "center" }}><Reveal>
       <GoldDivider width={36} />
@@ -414,14 +425,6 @@ function AboutPage() {
       <p style={{ fontFamily: F.display, fontSize: 22, fontWeight: 600, color: T.navy, marginTop: 28, marginBottom: 4 }}>This is more than a care home — this is home.</p>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginTop: 16 }}><div style={{ width: 24, height: 1, background: T.gold }} /><span style={{ fontFamily: F.body, fontSize: 14, fontWeight: 600, color: T.gold }}>Parminder, Founder</span><div style={{ width: 24, height: 1, background: T.gold }} /></div>
     </Reveal></div></Section>
-    <Section bg={T.offWhite}><SectionHeader label="Our Team" title="Dedicated Caregivers" subtitle="Placeholder for team member photos and bios." />
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 20 }}>
-        {[1,2,3,4].map(i=> <Reveal key={i} delay={i*0.08}><div style={{ textAlign: "center" }}>
-          <div style={{ width: 140, height: 140, borderRadius: "50%", background: T.creamDark, margin: "0 auto 14px", border: `2px solid ${T.goldAccent}`, display: "flex", alignItems: "center", justifyContent: "center" }}><svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke={T.border} strokeWidth="1"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg></div>
-          <div style={{ fontFamily: F.body, fontSize: 14, fontWeight: 600, color: T.navy }}>Team Member</div><div style={{ fontFamily: F.body, fontSize: 12, color: T.textLight }}>Role Title</div>
-        </div></Reveal>)}
-      </div>
-    </Section>
     <CTABand />
   </>;
 }
