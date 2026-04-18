@@ -453,6 +453,20 @@ function VirtualTourPage() {
   const tourFAQs = [FAQ_DATA.dailyLife[3], FAQ_DATA.dailyLife[2], FAQ_DATA.smallHome[1]];
   return <>
     <PageHero title="Virtual Tour" subtitle="Explore our warm, welcoming assisted living home." image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80" />
+    <Section bg={T.offWhite}>
+      <Reveal><SectionLabel text="Interactive Tour" /><h2 style={{ fontFamily: F.display, fontSize: "clamp(26px, 3.5vw, 36px)", fontWeight: 600, color: T.navy, textAlign: "center", marginBottom: 8 }}>Walk Through Our Home</h2><GoldDivider /><p style={{ fontFamily: F.body, fontSize: 16, color: T.textLight, textAlign: "center", marginTop: 16, marginBottom: 32, lineHeight: 1.7 }}>Use the 360° viewer below to explore every room at your own pace.</p></Reveal>
+      <Reveal>
+        <div style={{ borderRadius: T.radiusLg, overflow: "hidden", boxShadow: "0 8px 40px rgba(26,39,68,0.12)", border: `1px solid ${T.border}` }}>
+          <iframe src="https://my.matterport.com/show/?m=m6Er12EoiR4" width="100%" height="600" allowFullScreen allow="xr-spatial-tracking" style={{ display: "block", border: "none" }} title="At Home Comfort Virtual Tour" />
+        </div>
+        <div style={{ textAlign: "center", marginTop: 20 }}>
+          <a href="https://my.matterport.com/show/?m=m6Er12EoiR4" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: T.navy, color: T.white, fontFamily: F.body, fontSize: 15, fontWeight: 600, padding: "13px 28px", borderRadius: T.radius, textDecoration: "none", boxShadow: "0 2px 8px rgba(26,39,68,0.15)", transition: "background 0.25s" }}>
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Open Full Tour in New Tab
+          </a>
+        </div>
+      </Reveal>
+    </Section>
     <Section bg={T.offWhite}><SectionHeader label="Our Home" title="A Place Designed for Comfort" subtitle="Private rooms, sunlit common areas, a welcoming kitchen, and peaceful outdoor spaces — all in a smaller, calmer setting." />
       <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 14 }}>
         {[{src:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80",span:"span 3"},{src:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80",span:"span 3"},{src:"https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80",span:"span 2"},{src:"https://images.unsplash.com/photo-1600573472556-e636c2acda9e?w=600&q=80",span:"span 2"},{src:"https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600&q=80",span:"span 2"},{src:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80",span:"span 4"},{src:"https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=600&q=80",span:"span 2"}].map((img,i)=>
