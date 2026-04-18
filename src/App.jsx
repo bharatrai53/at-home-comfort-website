@@ -400,30 +400,35 @@ function AboutPage() {
         <p style={{ fontFamily: F.body, fontSize: 17, color: "rgba(255,255,255,0.85)", lineHeight: 1.65, maxWidth: 480, margin: "0 auto", textShadow: "0 1px 8px rgba(0,0,0,0.15)" }}>A home built on love, inspired by family.</p></Reveal>
       </div>
     </div>
-    <Section bg={T.offWhite}><div style={{ display: "flex", gap: 56, flexWrap: "wrap", alignItems: "center" }}>
-      <div style={{ flex: "1 1 460px", minWidth: 280 }}>
-        <Reveal><SectionLabel text="From Our Founder" align="left" /><h2 style={{ fontFamily: F.display, fontSize: "clamp(28px, 3.5vw, 36px)", fontWeight: 600, color: T.navy, lineHeight: 1.2, margin: "10px 0 8px" }}>A Home Inspired by Kishan</h2><GoldDivider width={36} /></Reveal>
-        <Reveal delay={0.1}>
-          <p style={{ fontFamily: F.body, fontSize: 16, color: T.textBody, lineHeight: 1.85, marginTop: 22, marginBottom: 16 }}>Home Comfort Assisted Living was founded with a deeply personal purpose. My name is Parminder, and the heart behind this home is my beloved grandmother, Kishan. She moved to the United States at the age of 100 and lived a long, beautiful life until she passed at 112.</p>
-          <p style={{ fontFamily: F.body, fontSize: 16, color: T.textBody, lineHeight: 1.85, marginBottom: 16 }}>Caring for her wasn't just a responsibility — it was a gift. Kishan taught me that every elder deserves to feel loved, respected, and surrounded by warmth every single day.</p>
-          <p style={{ fontFamily: F.body, fontSize: 16, color: T.textBody, lineHeight: 1.85 }}>Seeing how she was cared for at home shaped my belief that senior care should never feel clinical or impersonal. It should feel like family. It should feel like home.</p>
-        </Reveal>
-      </div>
-      <Reveal delay={0.15} style={{ flex: "1 1 380px", minWidth: 280 }}>
-        <div style={{ position: "relative", borderRadius: T.radiusLg, overflow: "hidden", boxShadow: "0 20px 60px rgba(26,39,68,0.15)", border: `3px solid ${T.goldAccent}` }}>
-          <img src="/IMG_1960.JPEG" alt="Parminder with her grandmother Kishan" style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "4/5" }} />
-          <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "linear-gradient(0deg, rgba(26,39,68,0.85) 0%, transparent 100%)", padding: "32px 20px 18px" }}>
-            <p style={{ fontFamily: F.display, fontSize: 15, color: T.white, fontStyle: "italic", margin: 0, textAlign: "center" }}>Parminder with her grandmother, Kishan</p>
+    <Section bg={T.offWhite}>
+      <Reveal style={{ textAlign: "center", marginBottom: 40 }}>
+        <SectionLabel text="From Our Founder" />
+        <h2 style={{ fontFamily: F.display, fontSize: "clamp(28px, 3.5vw, 36px)", fontWeight: 600, color: T.navy, lineHeight: 1.2, margin: "10px 0 10px" }}>A Home Inspired by Kishan</h2>
+        <GoldDivider width={36} />
+      </Reveal>
+      <Reveal delay={0.1}>
+        <div className="founder-layout" style={{ display: "flex", gap: 40, alignItems: "flex-start" }}>
+          <div style={{ flex: 1 }}>
+            <p style={{ fontFamily: F.body, fontSize: 16, color: T.textBody, lineHeight: 1.85, marginBottom: 16 }}>Home Comfort Assisted Living was founded with a deeply personal purpose. My name is Parminder, and the heart behind this home is my beloved grandmother, Kishan. She moved to the United States at the age of 100 and lived a long, beautiful life until she passed at 112.</p>
+            <p style={{ fontFamily: F.body, fontSize: 16, color: T.textBody, lineHeight: 1.85 }}>Caring for her wasn't just a responsibility — it was a gift. Kishan taught me that every elder deserves to feel loved, respected, and surrounded by warmth every single day.</p>
+          </div>
+          <div className="founder-image" style={{ width: "28%", flexShrink: 0 }}>
+            <div style={{ borderRadius: 24, overflow: "hidden", boxShadow: "0 12px 40px rgba(26,39,68,0.18)", border: `2px solid ${T.navy}` }}>
+              <img src="/IMG_1960.JPEG" alt="Parminder with her grandmother Kishan" style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "4/5" }} />
+            </div>
+            <p style={{ fontFamily: F.display, fontSize: 13, color: T.textLight, fontStyle: "italic", textAlign: "center", marginTop: 10 }}>Parminder with her grandmother, Kishan</p>
+          </div>
+          <div style={{ flex: 1 }}>
+            <p style={{ fontFamily: F.body, fontSize: 16, color: T.textBody, lineHeight: 1.85, marginBottom: 16 }}>Seeing how she was cared for at home shaped my belief that senior care should never feel clinical or impersonal. It should feel like family. It should feel like home.</p>
+            <p style={{ fontFamily: F.body, fontSize: 16, color: T.textBody, lineHeight: 1.85, marginBottom: 20 }}>Here, independence is honored, dignity is protected, and every day is filled with comfort, familiarity, and joy.</p>
+            <p style={{ fontFamily: F.display, fontSize: 18, fontWeight: 600, color: T.navy, lineHeight: 1.5 }}>This is more than a care home — this is home.</p>
           </div>
         </div>
       </Reveal>
-    </div></Section>
+    </Section>
     <Section bg={T.cream}><div style={{ maxWidth: 680, margin: "0 auto", textAlign: "center" }}><Reveal>
-      <GoldDivider width={36} />
-      <p style={{ fontFamily: F.display, fontSize: "clamp(20px, 3vw, 26px)", fontWeight: 500, color: T.navy, lineHeight: 1.65, fontStyle: "italic", margin: "24px 0 20px" }}>"That belief is the foundation of Home Comfort Assisted Living. I intentionally keep our community small so each resident receives genuine attention, meaningful relationships, and the same compassion I witnessed in my own family."</p>
-      <p style={{ fontFamily: F.body, fontSize: 16, color: T.textBody, lineHeight: 1.8, marginBottom: 12 }}>Here, independence is honored, dignity is protected, and every day is filled with comfort, familiarity, and joy.</p>
-      <p style={{ fontFamily: F.display, fontSize: 22, fontWeight: 600, color: T.navy, marginTop: 28, marginBottom: 4 }}>This is more than a care home — this is home.</p>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginTop: 16 }}><div style={{ width: 24, height: 1, background: T.gold }} /><span style={{ fontFamily: F.body, fontSize: 14, fontWeight: 600, color: T.gold }}>Parminder, Founder</span><div style={{ width: 24, height: 1, background: T.gold }} /></div>
+      <p style={{ fontFamily: F.display, fontSize: "clamp(20px, 3vw, 26px)", fontWeight: 500, color: T.navy, lineHeight: 1.65, fontStyle: "italic", margin: "0 0 24px" }}>"That belief is the foundation of Home Comfort Assisted Living. I intentionally keep our community small so each resident receives genuine attention, meaningful relationships, and the same compassion I witnessed in my own family."</p>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}><div style={{ width: 24, height: 1, background: T.gold }} /><span style={{ fontFamily: F.body, fontSize: 14, fontWeight: 600, color: T.gold }}>Parminder, Founder</span><div style={{ width: 24, height: 1, background: T.gold }} /></div>
     </Reveal></div></Section>
     <CTABand />
   </>;

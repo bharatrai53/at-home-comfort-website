@@ -52,3 +52,14 @@ textarea:focus {
     --desk-show: none;
   }
 }
+
+@media (max-width: 768px) {
+  .founder-layout {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .founder-image {
+    width: 80% !important;
+    max-width: 340px !important;
+  }
+}
