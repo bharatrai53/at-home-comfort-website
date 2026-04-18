@@ -467,13 +467,6 @@ function VirtualTourPage() {
         </div>
       </Reveal>
     </Section>
-    <Section bg={T.offWhite}><SectionHeader label="Our Home" title="A Place Designed for Comfort" subtitle="Private rooms, sunlit common areas, a welcoming kitchen, and peaceful outdoor spaces — all in a smaller, calmer setting." />
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 14 }}>
-        {[{src:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80",span:"span 3"},{src:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80",span:"span 3"},{src:"https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80",span:"span 2"},{src:"https://images.unsplash.com/photo-1600573472556-e636c2acda9e?w=600&q=80",span:"span 2"},{src:"https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600&q=80",span:"span 2"},{src:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80",span:"span 4"},{src:"https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=600&q=80",span:"span 2"}].map((img,i)=>
-          <Reveal key={i} delay={i*0.06} style={{ gridColumn: img.span }}><ImgPlaceholder src={img.src} aspect="3/2" /></Reveal>
-        )}
-      </div>
-    </Section>
     <Section bg={T.cream}><SectionHeader label="Amenities" title="What Makes Our Home Feel Like Home" />
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20 }}>
         {["Private Rooms","En-Suite Bathrooms","Sunlit Common Areas","Outdoor Garden Space","Home-Style Kitchen","Activity Room"].map((a,i)=>
