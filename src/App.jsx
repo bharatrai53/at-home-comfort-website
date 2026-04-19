@@ -462,10 +462,10 @@ function VirtualTourPage() {
       <Reveal><SectionLabel text="Interactive Tour" /><h2 style={{ fontFamily: F.display, fontSize: "clamp(26px, 3.5vw, 36px)", fontWeight: 600, color: T.navy, textAlign: "center", marginBottom: 8 }}>Walk Through Our Home</h2><GoldDivider /><p style={{ fontFamily: F.body, fontSize: 16, color: T.textLight, textAlign: "center", marginTop: 16, marginBottom: 32, lineHeight: 1.7 }}>Use the 360° viewer below to explore every room at your own pace.</p></Reveal>
       <Reveal>
         <div style={{ borderRadius: T.radiusLg, overflow: "hidden", boxShadow: "0 8px 40px rgba(26,39,68,0.12)", border: `1px solid ${T.border}` }}>
-          <iframe src="https://my.matterport.com/show/?m=m6Er12EoiR4" width="100%" height="600" allowFullScreen allow="xr-spatial-tracking" style={{ display: "block", border: "none" }} title="At Home Comfort Virtual Tour" />
+          <iframe src="https://my.matterport.com/show/?m=jSdaLLLCrBT" width="100%" height="600" allowFullScreen allow="xr-spatial-tracking" style={{ display: "block", border: "none" }} title="At Home Comfort Virtual Tour" />
         </div>
         <div style={{ textAlign: "center", marginTop: 20 }}>
-          <a href="https://my.matterport.com/show/?m=m6Er12EoiR4" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: T.navy, color: T.white, fontFamily: F.body, fontSize: 15, fontWeight: 600, padding: "13px 28px", borderRadius: T.radius, textDecoration: "none", boxShadow: "0 2px 8px rgba(26,39,68,0.15)", transition: "background 0.25s" }}>
+          <a href="https://my.matterport.com/show/?m=jSdaLLLCrBT" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: T.navy, color: T.white, fontFamily: F.body, fontSize: 15, fontWeight: 600, padding: "13px 28px", borderRadius: T.radius, textDecoration: "none", boxShadow: "0 2px 8px rgba(26,39,68,0.15)", transition: "background 0.25s" }}>
             <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             Open Full Tour in New Tab
           </a>
