@@ -672,7 +672,7 @@ function Footer({ setActive }) {
     <div style={{ display: "flex", gap: 48, flexWrap: "wrap", marginBottom: 40 }}>
       <div style={{ flex: "1 1 260px", minWidth: 200 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
-          <div style={{ width: 32, height: 32, borderRadius: 8, background: T.navyLight, display: "flex", alignItems: "center", justifyContent: "center" }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={T.gold} strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" strokeLinecap="round" strokeLinejoin="round"/></svg></div>
+          <img src="/rmvbckgrnd.png" alt="" style={{ height: 44, width: "auto", display: "block" }} />
           <div><div style={{ fontFamily: F.display, fontSize: 15, fontWeight: 700, color: T.white }}>At Home Comfort</div><div style={{ fontFamily: F.body, fontSize: 8, fontWeight: 600, color: T.gold, letterSpacing: "0.2em", textTransform: "uppercase" }}>Assisted Living</div></div>
         </div>
         <p style={{ fontFamily: F.body, fontSize: 13, color: "rgba(255,255,255,0.4)", lineHeight: 1.7, maxWidth: 240 }}>Intimate assisted living in Manteca where every resident is known, valued, and genuinely cared for.</p>
