@@ -13,10 +13,11 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <!-- Hidden form for Netlify build-bot detection -->
-    <form name="tour-request" netlify netlify-honeypot="bot-field" hidden>
+    <form name="tour-request" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="text" name="form-name" value="tour-request" />
       <input type="text" name="name" />
       <input type="email" name="email" />
-      <input type="text" name="phone" />
+      <input type="tel" name="phone" />
       <input type="text" name="relationship" />
       <textarea name="message"></textarea>
     </form>
