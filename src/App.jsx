@@ -481,7 +481,7 @@ function VirtualTourPage() {
       </Reveal>
     </Section>
     <Section bg={T.cream}><SectionHeader label="Amenities" title="What Makes Our Home Feel Like Home" />
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
         {["Private Rooms","En-Suite Bathrooms","Sunlit Common Areas","Outdoor Garden Space","Home-Style Kitchen","Activity Room"].map((a,i)=>
           <Reveal key={i} delay={i*0.06}><div style={{ background: T.white, borderRadius: T.radius, padding: "20px 24px", border: `1px solid ${T.border}`, display: "flex", alignItems: "center", gap: 12 }}>
             <div style={{ width: 8, height: 8, borderRadius: "50%", background: T.gold, flexShrink: 0 }} /><span style={{ fontFamily: F.body, fontSize: 14, fontWeight: 500, color: T.navy }}>{a}</span>
