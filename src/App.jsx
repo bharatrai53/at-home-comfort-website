@@ -620,7 +620,7 @@ function ScheduleTourPage() {
                   </div>
                   <div style={{ marginBottom: 18 }}>
                     <label style={labelStyle}>Phone Number</label>
-                    <input type="tel" name="phone" placeholder="Phone Number" value={fields.phone} onChange={set("phone")} style={inputStyle}
+                    <input required type="tel" name="phone" placeholder="Phone Number" value={fields.phone} onChange={set("phone")} style={inputStyle}
                       onFocus={e => e.target.style.borderColor = T.gold} onBlur={e => e.target.style.borderColor = T.border} />
                   </div>
                   <div style={{ marginBottom: 18 }}>
