@@ -1,0 +1,17 @@
+{
+  "name": "At Home Comfort Assisted Living",
+  "short_name": "At Home Comfort",
+  "description": "Small, personalized assisted living in Manteca, CA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1A2744",
+  "theme_color": "#C49A52",
+  "icons": [
+    {
+      "src": "/rmvbckgrnd.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
