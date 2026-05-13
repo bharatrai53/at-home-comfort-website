@@ -543,16 +543,18 @@ function FAQsPage() {
     <PageHero title="Frequently Asked Questions" subtitle="Clear answers to the questions families ask most about assisted living." />
     <Section bg={T.offWhite}>
       {/* ── Category tab pills ── */}
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center", marginBottom: 52 }}>
+      <div className="faq-tabs">
         {categories.map(c => {
           const active = activeTab === c.key;
           return <button key={c.key} onClick={() => setActiveTab(c.key)} style={{
+            width: "100%",
             background: active ? T.navy : T.cream,
             color: active ? T.white : T.textBody,
             border: `1.5px solid ${active ? T.navy : T.border}`,
-            borderRadius: 100, padding: "10px 22px",
-            fontFamily: F.body, fontSize: 13.5, fontWeight: active ? 600 : 400,
-            cursor: "pointer", transition: "all 0.25s",
+            borderRadius: 100, padding: "10px 16px",
+            fontFamily: F.body, fontSize: 13, fontWeight: active ? 600 : 400,
+            cursor: "pointer", transition: "all 0.25s", textAlign: "center",
+            whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
           }}>{c.label}</button>;
         })}
       </div>

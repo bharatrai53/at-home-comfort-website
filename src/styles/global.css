@@ -63,3 +63,16 @@ textarea:focus {
     max-width: 340px !important;
   }
 }
+
+.faq-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 52px;
+}
+
+@media (max-width: 600px) {
+  .faq-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
