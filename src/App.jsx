@@ -246,7 +246,9 @@ function HomePage() {
       <div style={{ ...W }}>
         <div style={{ display: "flex", gap: 60, flexWrap: "wrap", alignItems: "center" }}>
           <Reveal style={{ flex: "1 1 440px", minWidth: 280 }}>
-            <ImgPlaceholder src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=800&q=80" alt="Warm home interior" aspect="5/4" />
+            <div style={{ borderRadius: T.radiusLg, overflow: "hidden", boxShadow: "0 20px 60px rgba(26,39,68,0.12)" }}>
+              <img src="/outside.jpg" alt="At Home Comfort exterior" style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "5/4" }} />
+            </div>
           </Reveal>
           <div style={{ flex: "1 1 420px", minWidth: 280 }}>
             <Reveal>
@@ -378,7 +380,9 @@ function HomePage() {
             </div>
           </div>
           <Reveal delay={0.15} style={{ flex: "1 1 400px", minWidth: 280 }}>
-            <ImgPlaceholder src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" alt="Peaceful home" aspect="4/5" />
+            <div style={{ borderRadius: T.radiusLg, overflow: "hidden", boxShadow: "0 20px 60px rgba(26,39,68,0.12)" }}>
+              <img src="/outside.jpg" alt="At Home Comfort exterior" style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "4/5" }} />
+            </div>
           </Reveal>
         </div>
       </div>
