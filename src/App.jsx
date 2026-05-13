@@ -528,20 +528,53 @@ function FAQHubItem({ q, a }) {
     </div>
   </div>;
 }
-function FAQCategory({ title, faqs }) {
-  return <div style={{ marginBottom: 56 }}><Reveal><h3 style={{ fontFamily: F.display, fontSize: 24, fontWeight: 600, color: T.navy, marginBottom: 6 }}>{title}</h3><div style={{ width: 32, height: 2, background: T.gold, borderRadius: 1, marginBottom: 20 }} /></Reveal>{faqs.map((f,i)=><FAQHubItem key={i} q={f.q} a={f.a} />)}</div>;
-}
 function FAQsPage() {
+  const categories = [
+    { key: "fitCare",         label: "Fit & Care",           faqs: FAQ_DATA.fitCare },
+    { key: "safetyStaffing",  label: "Safety & Staffing",    faqs: FAQ_DATA.safetyStaffing },
+    { key: "dailyLife",       label: "Daily Life",           faqs: FAQ_DATA.dailyLife },
+    { key: "costPayment",     label: "Cost & Payment",       faqs: FAQ_DATA.costPayment },
+    { key: "toursAdmissions", label: "Tours & Admissions",   faqs: FAQ_DATA.toursAdmissions },
+    { key: "smallHome",       label: "Small-Home Living",    faqs: FAQ_DATA.smallHome },
+  ];
+  const [activeTab, setActiveTab] = useState("fitCare");
+  const current = categories.find(c => c.key === activeTab);
   return <>
     <PageHero title="Frequently Asked Questions" subtitle="Clear answers to the questions families ask most about assisted living." />
-    <Section bg={T.offWhite}><div style={{ maxWidth: 760, margin: "0 auto" }}>
-      <FAQCategory title="Fit & Care" faqs={FAQ_DATA.fitCare} />
-      <FAQCategory title="Safety & Staffing" faqs={FAQ_DATA.safetyStaffing} />
-      <FAQCategory title="Daily Life" faqs={FAQ_DATA.dailyLife} />
-      <FAQCategory title="Cost & Payment" faqs={FAQ_DATA.costPayment} />
-      <FAQCategory title="Tours & Admissions" faqs={FAQ_DATA.toursAdmissions} />
-      <FAQCategory title="Small-Home Assisted Living" faqs={FAQ_DATA.smallHome} />
-    </div></Section>
+    <Section bg={T.offWhite}>
+      {/* ── Category tab pills ── */}
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center", marginBottom: 52 }}>
+        {categories.map(c => {
+          const active = activeTab === c.key;
+          return <button key={c.key} onClick={() => setActiveTab(c.key)} style={{
+            background: active ? T.navy : T.cream,
+            color: active ? T.white : T.textBody,
+            border: `1.5px solid ${active ? T.navy : T.border}`,
+            borderRadius: 100, padding: "10px 22px",
+            fontFamily: F.body, fontSize: 13.5, fontWeight: active ? 600 : 400,
+            cursor: "pointer", transition: "all 0.25s",
+          }}>{c.label}</button>;
+        })}
+      </div>
+      {/* ── Active category ── */}
+      <div style={{ maxWidth: 760, margin: "0 auto" }}>
+        <Reveal>
+          <h3 style={{ fontFamily: F.display, fontSize: 26, fontWeight: 600, color: T.navy, marginBottom: 8 }}>{current.label}</h3>
+          <div style={{ width: 32, height: 2, background: T.gold, borderRadius: 1, marginBottom: 28 }} />
+        </Reveal>
+        {current.faqs.map((f, i) => <FAQHubItem key={activeTab + i} q={f.q} a={f.a} />)}
+        <div style={{ marginTop: 40, padding: "24px 28px", background: T.cream, borderRadius: T.radiusLg, border: `1px solid ${T.border}`, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
+          <div>
+            <p style={{ fontFamily: F.display, fontSize: 17, fontWeight: 600, color: T.navy, margin: "0 0 4px" }}>Still have questions?</p>
+            <p style={{ fontFamily: F.body, fontSize: 14, color: T.textLight, margin: 0 }}>We're happy to talk through anything before you visit.</p>
+          </div>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+            <BtnPrimary onClick={() => goTo("Schedule a Tour")}>Schedule a Tour</BtnPrimary>
+            <BtnSecondary onClick={() => window.location.href = "tel:9256058864"}>Call Us</BtnSecondary>
+          </div>
+        </div>
+      </div>
+    </Section>
     <CTABand />
   </>;
 }
