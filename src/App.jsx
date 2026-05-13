@@ -461,11 +461,97 @@ function CareServicesPage() {
   </>;
 }
 
+const AMENITY_PHOTOS = {
+  "Private Rooms":       ["/updatedrooms/IMG_9689.jpg","/updatedrooms/IMG_9721.jpg","/updatedrooms/IMG_9732.jpg","/updatedrooms/IMG_9743.jpg","/updatedrooms/IMG_9753.jpg","/updatedrooms/IMG_9763.jpg","/updatedrooms/IMG_9771.jpg"],
+  "En-Suite Bathrooms":  ["/updatedrooms/IMG_9713.jpg","/updatedrooms/IMG_9766.jpg","/updatedrooms/IMG_9774.jpg"],
+  "Sunlit Common Areas": ["/updatedrooms/IMG_9749.jpg","/updatedrooms/IMG_9759.jpg","/updatedrooms/IMG_9760.jpg","/updatedrooms/IMG_9762.jpg"],
+  "Outdoor Garden Space":["/outside.jpg"],
+  "Home-Style Kitchen":  ["/updatedrooms/IMG_9700.jpg","/updatedrooms/IMG_9709.jpg","/updatedrooms/IMG_9726.jpg"],
+  "Activity Room":       ["/updatedrooms/IMG_9759.jpg","/updatedrooms/IMG_9760.jpg","/updatedrooms/IMG_9762.jpg"],
+};
+function AmenityCard({ label, delay, onClick }) {
+  const [h, setH] = useState(false);
+  const photos = AMENITY_PHOTOS[label] || [];
+  return (
+    <Reveal delay={delay}>
+      <div onClick={onClick} onMouseEnter={() => setH(true)} onMouseLeave={() => setH(false)}
+        style={{ borderRadius: T.radius, overflow: "hidden", cursor: "pointer", border: `1px solid ${h ? T.gold : T.border}`, boxShadow: h ? "0 8px 28px rgba(196,154,82,0.15)" : "0 1px 4px rgba(0,0,0,0.04)", transition: "all 0.3s ease", transform: h ? "translateY(-3px)" : "none", background: T.white }}>
+        {/* Thumbnail strip */}
+        <div style={{ height: 110, overflow: "hidden", position: "relative", background: T.creamDark }}>
+          <img src={photos[0]} alt={label} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.4s ease", transform: h ? "scale(1.05)" : "scale(1)" }} />
+          <div style={{ position: "absolute", inset: 0, background: h ? "rgba(26,39,68,0.08)" : "rgba(26,39,68,0.0)", transition: "background 0.3s" }} />
+          {photos.length > 1 && <div style={{ position: "absolute", bottom: 8, right: 8, background: "rgba(26,39,68,0.65)", backdropFilter: "blur(4px)", borderRadius: 20, padding: "2px 9px", fontFamily: F.body, fontSize: 11, color: T.white, fontWeight: 500 }}>{photos.length} photos</div>}
+        </div>
+        {/* Label row */}
+        <div style={{ padding: "13px 16px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ width: 7, height: 7, borderRadius: "50%", background: T.gold, flexShrink: 0 }} />
+            <span style={{ fontFamily: F.body, fontSize: 13.5, fontWeight: 500, color: T.navy }}>{label}</span>
+          </div>
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke={T.gold} strokeWidth="2" style={{ opacity: h ? 1 : 0.4, transition: "opacity 0.3s", flexShrink: 0 }}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
+// Photo lightbox modal
+function PhotoModal({ title, photos, onClose }) {
+  const [idx, setIdx] = useState(0);
+  const prev = () => setIdx(i => (i - 1 + photos.length) % photos.length);
+  const next = () => setIdx(i => (i + 1) % photos.length);
+  useEffect(() => {
+    const fn = e => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight") setIdx(i => (i + 1) % photos.length);
+      if (e.key === "ArrowLeft")  setIdx(i => (i - 1 + photos.length) % photos.length);
+    };
+    window.addEventListener("keydown", fn);
+    return () => window.removeEventListener("keydown", fn);
+  }, [photos.length, onClose]);
+  const ArrowBtn = ({ dir, onClick }) => (
+    <button onClick={onClick} style={{ position: "absolute", [dir]: 14, top: "50%", transform: "translateY(-50%)", zIndex: 2, background: "rgba(26,39,68,0.65)", border: "1px solid rgba(255,255,255,0.18)", backdropFilter: "blur(6px)", borderRadius: "50%", width: 42, height: 42, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", color: T.white, transition: "background 0.2s" }}>
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d={dir === "left" ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} /></svg>
+    </button>
+  );
+  return (
+    <div onClick={onClose} style={{ position: "fixed", inset: 0, zIndex: 2000, background: "rgba(10,16,30,0.9)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px", animation: "fadeIn 0.2s ease" }}>
+      <div onClick={e => e.stopPropagation()} style={{ width: "100%", maxWidth: 880, animation: "scaleIn 0.25s ease" }}>
+        {/* Header */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 14, padding: "0 2px" }}>
+          <div>
+            <span style={{ fontFamily: F.body, fontSize: 10, fontWeight: 600, color: T.gold, letterSpacing: "0.22em", textTransform: "uppercase" }}>At Home Comfort</span>
+            <h3 style={{ fontFamily: F.display, fontSize: 26, fontWeight: 600, color: T.white, margin: "4px 0 0", lineHeight: 1 }}>{title}</h3>
+          </div>
+          <button onClick={onClose} style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)", color: T.white, width: 36, height: 36, borderRadius: "50%", cursor: "pointer", fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, transition: "background 0.2s" }}>
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        {/* Photo */}
+        <div style={{ position: "relative", borderRadius: T.radiusLg, overflow: "hidden", background: "rgba(0,0,0,0.4)", lineHeight: 0 }}>
+          <img key={idx} src={photos[idx]} alt={title} style={{ width: "100%", maxHeight: "62vh", objectFit: "contain", display: "block", animation: "imgFade 0.3s ease" }} />
+          {photos.length > 1 && <><ArrowBtn dir="left" onClick={prev} /><ArrowBtn dir="right" onClick={next} /></>}
+        </div>
+        {/* Dots + counter */}
+        {photos.length > 1 && (
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginTop: 16 }}>
+            {photos.map((_, i) => (
+              <button key={i} onClick={() => setIdx(i)} style={{ width: i === idx ? 22 : 8, height: 8, borderRadius: 4, border: "none", padding: 0, cursor: "pointer", background: i === idx ? T.gold : "rgba(255,255,255,0.28)", transition: "all 0.3s ease" }} />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 // PAGE: VIRTUAL TOUR
 function VirtualTourPage() {
   const tourFAQs = [FAQ_DATA.dailyLife[3], FAQ_DATA.dailyLife[2], FAQ_DATA.smallHome[1]];
+  const [modal, setModal] = useState(null);
   return <>
     <PageHero title="Virtual Tour" subtitle="Explore our warm, welcoming assisted living home." image="/updatedrooms/IMG_9753.jpg" />
+    {modal && <PhotoModal title={modal} photos={AMENITY_PHOTOS[modal]} onClose={() => setModal(null)} />}
     <Section bg={T.offWhite}>
       <Reveal><SectionLabel text="Interactive Tour" /><h2 style={{ fontFamily: F.display, fontSize: "clamp(26px, 3.5vw, 36px)", fontWeight: 600, color: T.navy, textAlign: "center", marginBottom: 8 }}>Walk Through Our Home</h2><GoldDivider /><p style={{ fontFamily: F.body, fontSize: 16, color: T.textLight, textAlign: "center", marginTop: 16, marginBottom: 32, lineHeight: 1.7 }}>Use the 360° viewer below to explore every room at your own pace.</p></Reveal>
       <Reveal>
@@ -481,12 +567,11 @@ function VirtualTourPage() {
       </Reveal>
     </Section>
     <Section bg={T.cream}><SectionHeader label="Amenities" title="What Makes Our Home Feel Like Home" />
+      <p style={{ fontFamily: F.body, fontSize: 14, color: T.textLight, textAlign: "center", marginTop: -32, marginBottom: 40 }}>Tap any space to see photos</p>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
-        {["Private Rooms","En-Suite Bathrooms","Sunlit Common Areas","Outdoor Garden Space","Home-Style Kitchen","Activity Room"].map((a,i)=>
-          <Reveal key={i} delay={i*0.06}><div style={{ background: T.white, borderRadius: T.radius, padding: "20px 24px", border: `1px solid ${T.border}`, display: "flex", alignItems: "center", gap: 12 }}>
-            <div style={{ width: 8, height: 8, borderRadius: "50%", background: T.gold, flexShrink: 0 }} /><span style={{ fontFamily: F.body, fontSize: 14, fontWeight: 500, color: T.navy }}>{a}</span>
-          </div></Reveal>
-        )}
+        {Object.keys(AMENITY_PHOTOS).map((label, i) => (
+          <AmenityCard key={i} label={label} delay={i * 0.06} onClick={() => setModal(label)} />
+        ))}
       </div>
     </Section>
     <MicroFAQBlock title="About Our Home" faqs={tourFAQs} bg={T.offWhite} />
