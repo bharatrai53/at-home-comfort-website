@@ -204,7 +204,7 @@ function HomePage() {
   return <>
     {/* ─── HERO: Cinematic, centered, emotional ─── */}
     <div style={{ position: "relative", width: "100%", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", background: T.navy }}>
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80" alt="Assisted living home in Manteca" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.35 }} />
+      <img src="/updatedrooms/IMG_9762.jpg" alt="At Home Comfort living room" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.35 }} />
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at center bottom, rgba(26,39,68,0.4) 0%, rgba(26,39,68,0.8) 70%)" }} />
       <div style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "120px 24px 60px", maxWidth: 680 }}>
         <Reveal>
@@ -278,7 +278,7 @@ function HomePage() {
 
     {/* ─── Full-width photo band ─── */}
     <div style={{ width: "100%", height: "clamp(200px, 30vw, 380px)", overflow: "hidden", position: "relative" }}>
-      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80" alt="Warm living space" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      <img src="/updatedrooms/IMG_9749.jpg" alt="At Home Comfort living room" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(250,246,239,0.4) 0%, transparent 30%, transparent 70%, rgba(250,246,239,0.4) 100%)" }} />
     </div>
 
@@ -314,10 +314,10 @@ function HomePage() {
         </Reveal>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 12, marginTop: 48 }}>
           {[
-            {src:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80",span:"span 4",r:"3/2"},
-            {src:"https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80",span:"span 2",r:"3/2"},
-            {src:"https://images.unsplash.com/photo-1600573472556-e636c2acda9e?w=600&q=80",span:"span 2",r:"1/1"},
-            {src:"https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600&q=80",span:"span 4",r:"2/1"},
+            {src:"/updatedrooms/IMG_9689.jpg",span:"span 4",r:"3/2"},
+            {src:"/updatedrooms/IMG_9700.jpg",span:"span 2",r:"3/2"},
+            {src:"/updatedrooms/IMG_9713.jpg",span:"span 2",r:"1/1"},
+            {src:"/updatedrooms/IMG_9759.jpg",span:"span 4",r:"2/1"},
           ].map((img,i)=>
             <Reveal key={i} delay={i*0.08} style={{ gridColumn: img.span }}><ImgPlaceholder src={img.src} aspect={img.r} /></Reveal>
           )}
@@ -442,7 +442,7 @@ function AboutPage() {
 function CareServicesPage() {
   const careFAQs = [FAQ_DATA.fitCare[2], FAQ_DATA.fitCare[3], FAQ_DATA.fitCare[4], FAQ_DATA.safetyStaffing[0], FAQ_DATA.dailyLife[0], FAQ_DATA.dailyLife[2]];
   return <>
-    <PageHero title="Care & Services" subtitle="Personalized daily support in a calm, homelike setting." image="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1200&q=80" />
+    <PageHero title="Care & Services" subtitle="Personalized daily support in a calm, homelike setting." image="/updatedrooms/IMG_9760.jpg" />
     <Section bg={T.offWhite}><SectionHeader label="What We Provide" title="Assisted Living Services Tailored to Each Resident" subtitle="We provide help with daily activities, medication routines, meals, and safety — all in a residential setting designed for comfort and dignity." />
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 18 }}>
         <IconCard icon={Ico.adl} label="ADL Support" delay={0} /><IconCard icon={Ico.meds} label="Medication Management" delay={0.06} /><IconCard icon={Ico.meals} label="Nutritious Meals" delay={0.12} /><IconCard icon={Ico.mobility} label="Mobility Assistance" delay={0.18} /><IconCard icon={Ico.activities} label="Activities & Engagement" delay={0.24} /><IconCard icon={Ico.support24} label="24/7 On-Site Staff" delay={0.3} />
@@ -450,7 +450,7 @@ function CareServicesPage() {
     </Section>
     <Section bg={T.cream}><div style={{ display: "flex", gap: 56, flexWrap: "wrap", alignItems: "center" }}>
       <div style={{ flex: "1 1 440px", minWidth: 280 }}><SectionHeader label="Our Approach" title="How We Personalize Care" align="left" subtitle="We keep our community small so we can learn each resident's routines, preferences, and comfort needs. Care is built around consistency, familiarity, and respectful support — reviewed and updated regularly." /></div>
-      <Reveal delay={0.15} style={{ flex: "1 1 380px", minWidth: 280 }}><ImgPlaceholder src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=800&q=80" alt="Personalized care" aspect="4/3" /></Reveal>
+      <Reveal delay={0.15} style={{ flex: "1 1 380px", minWidth: 280 }}><ImgPlaceholder src="/updatedrooms/IMG_9743.jpg" alt="Personalized resident room" aspect="4/3" /></Reveal>
     </div></Section>
     <MicroFAQBlock title="Care & Services Questions" faqs={careFAQs} bg={T.offWhite} />
     <CTABand />
@@ -461,7 +461,7 @@ function CareServicesPage() {
 function VirtualTourPage() {
   const tourFAQs = [FAQ_DATA.dailyLife[3], FAQ_DATA.dailyLife[2], FAQ_DATA.smallHome[1]];
   return <>
-    <PageHero title="Virtual Tour" subtitle="Explore our warm, welcoming assisted living home." image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80" />
+    <PageHero title="Virtual Tour" subtitle="Explore our warm, welcoming assisted living home." image="/updatedrooms/IMG_9753.jpg" />
     <Section bg={T.offWhite}>
       <Reveal><SectionLabel text="Interactive Tour" /><h2 style={{ fontFamily: F.display, fontSize: "clamp(26px, 3.5vw, 36px)", fontWeight: 600, color: T.navy, textAlign: "center", marginBottom: 8 }}>Walk Through Our Home</h2><GoldDivider /><p style={{ fontFamily: F.body, fontSize: 16, color: T.textLight, textAlign: "center", marginTop: 16, marginBottom: 32, lineHeight: 1.7 }}>Use the 360° viewer below to explore every room at your own pace.</p></Reveal>
       <Reveal>
