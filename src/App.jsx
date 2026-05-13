@@ -320,7 +320,7 @@ function HomePage() {
             <img src="/updatedrooms/IMG_9759.jpg" alt="Common living area" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           </Reveal>
           <Reveal delay={0.16} style={{ borderRadius: T.radiusLg, overflow: "hidden" }}>
-            <img src="/updatedrooms/IMG_9726.jpg" alt="Home kitchen" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            <img src="/updatedrooms/IMG_9771.jpg" alt="Private bedroom" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           </Reveal>
           <Reveal delay={0.24} style={{ borderRadius: T.radiusLg, overflow: "hidden" }}>
             <img src="/updatedrooms/IMG_9766.jpg" alt="Private bathroom" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
