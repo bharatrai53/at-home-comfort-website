@@ -76,7 +76,7 @@ function CTABand() {
       <p style={{ fontFamily: F.body, fontSize: 16, color: "rgba(255,255,255,0.6)", maxWidth: 420, margin: "0 auto 32px" }}>The best way to know if At Home Comfort is the right fit is to visit in person.</p>
       <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
         <BtnPrimary style={{ background: T.gold, boxShadow: "0 4px 20px rgba(196,154,82,0.3)" }} onClick={()=>goTo("Schedule a Tour")}>Schedule a Tour</BtnPrimary>
-        <BtnSecondary style={{ color: T.white, borderColor: "rgba(255,255,255,0.3)" }} onClick={()=>window.location.href="tel:9256058864"}>Call Now</BtnSecondary>
+        <BtnSecondary style={{ color: T.white, borderColor: "rgba(255,255,255,0.3)" }} onClick={()=>window.location.href="tel:9256058864"}>Call Us</BtnSecondary>
       </div>
     </Reveal>
   </section>;
@@ -192,7 +192,7 @@ function Navigation({ active, setActive }) {
     </nav>
     {mobileOpen && <div style={{ position: "fixed", inset: 0, zIndex: 999, background: T.offWhite, paddingTop: 80, display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
       {navItems.map(item => <button key={item} onClick={()=>{setActive(item);setMobileOpen(false);}} style={{ background: active===item?T.goldMuted:"transparent", border: "none", borderRadius: T.radius, padding: "14px 24px", width: "85%", cursor: "pointer", fontFamily: F.body, fontSize: 16, fontWeight: active===item?600:400, color: active===item?T.navy:T.textBody, textAlign: "center" }}>{item}</button>)}
-      <div style={{ display: "flex", gap: 10, marginTop: 16, width: "85%" }}><BtnPrimary style={{ flex: 1, textAlign: "center" }} onClick={()=>goTo("Schedule a Tour")}>Schedule a Tour</BtnPrimary><BtnSecondary style={{ flex: 1, textAlign: "center" }} onClick={()=>window.location.href="tel:9256058864"}>Call Now</BtnSecondary></div>
+      <div style={{ display: "flex", gap: 10, marginTop: 16, width: "85%" }}><BtnPrimary style={{ flex: 1, textAlign: "center" }} onClick={()=>goTo("Schedule a Tour")}>Schedule a Tour</BtnPrimary><BtnSecondary style={{ flex: 1, textAlign: "center" }} onClick={()=>window.location.href="tel:9256058864"}>Call Us</BtnSecondary></div>
     </div>}
   </>;
 }
@@ -214,7 +214,7 @@ function HomePage() {
         </Reveal>
         <Reveal delay={0.15}><div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
           <BtnPrimary style={{ background: T.gold, boxShadow: "0 4px 24px rgba(196,154,82,0.35)" }} onClick={()=>goTo("Schedule a Tour")}>Schedule a Tour</BtnPrimary>
-          <BtnSecondary style={{ color: T.white, borderColor: "rgba(255,255,255,0.3)" }} onClick={()=>window.location.href="tel:9256058864"}>Call Now</BtnSecondary>
+          <BtnSecondary style={{ color: T.white, borderColor: "rgba(255,255,255,0.3)" }} onClick={()=>window.location.href="tel:9256058864"}>Call Us</BtnSecondary>
         </div></Reveal>
       </div>
       {/* Scroll hint */}
@@ -611,7 +611,7 @@ function Footer({ setActive }) {
 
 function MobileCTABar() {
   return <div className="mob-cta" style={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 900, background: "rgba(249,243,228,0.97)", backdropFilter: "blur(12px)", borderTop: `1px solid ${T.border}`, padding: "10px 16px", display: "flex", gap: 10 }}>
-    <BtnSecondary style={{ flex: 1, textAlign: "center", padding: "12px 8px", fontSize: 14 }} onClick={()=>window.location.href="tel:9256058864"}>Call Now</BtnSecondary>
+    <BtnSecondary style={{ flex: 1, textAlign: "center", padding: "12px 8px", fontSize: 14 }} onClick={()=>window.location.href="tel:9256058864"}>Call Us</BtnSecondary>
     <BtnPrimary style={{ flex: 1, textAlign: "center", padding: "12px 8px", fontSize: 14 }} onClick={()=>goTo("Schedule a Tour")}>Schedule a Tour</BtnPrimary>
   </div>;
 }
