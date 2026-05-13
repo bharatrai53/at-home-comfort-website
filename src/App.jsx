@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from "react";
 
 const T = {
   navy: "#1A2744", navyLight: "#2A3A5C", gold: "#C49A52", goldLight: "#D4AF6E",
-  goldMuted: "rgba(196,154,82,0.12)", goldAccent: "rgba(196,154,82,0.25)",
-  cream: "#FAF6EF", creamDark: "#F2EDE4", white: "#FFFFFF", offWhite: "#FDFBF8",
-  textBody: "#4A4A4A", textLight: "#7A7A7A", border: "#E8E2D8", radius: 12, radiusLg: 18,
+  goldMuted: "rgba(196,154,82,0.13)", goldAccent: "rgba(196,154,82,0.24)",
+  cream: "#F7F1E4", creamDark: "#EDE5D4", white: "#FEFCF8", offWhite: "#FBF6EB",
+  textBody: "#4A4A4A", textLight: "#7A7A7A", border: "#E3D9C6", radius: 12, radiusLg: 18,
 };
 const F = { display: "'Cormorant Garamond', Georgia, serif", body: "'Outfit', 'Helvetica Neue', sans-serif" };
 
@@ -172,7 +172,7 @@ function Navigation({ active, setActive }) {
   const navItems = ["Home", "About", "Care & Services", "Virtual Tour", "Admissions", "FAQs"];
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 30); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
   return <>
-    <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, background: scrolled?"rgba(253,251,248,0.95)":"rgba(26,39,68,0.65)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", borderBottom: scrolled?`1px solid ${T.border}`:"1px solid rgba(255,255,255,0.08)", transition: "all 0.4s ease", padding: scrolled?"4px 0":"16px 0" }}>
+    <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, background: scrolled?"rgba(251,246,235,0.96)":"rgba(26,39,68,0.65)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", borderBottom: scrolled?`1px solid ${T.border}`:"1px solid rgba(255,255,255,0.08)", transition: "all 0.4s ease", padding: scrolled?"4px 0":"16px 0" }}>
       <div style={{ maxWidth: 1160, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: 8 }} onClick={()=>setActive("Home")}>
           <img src="/rmvbckgrnd.png" alt="" style={{ height: scrolled ? 44 : 52, width: "auto", display: "block", transition: "height 0.4s ease" }} />
