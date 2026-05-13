@@ -210,7 +210,7 @@ function HomePage() {
         <Reveal>
           <p style={{ fontFamily: F.body, fontSize: 12, fontWeight: 600, color: T.gold, letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: 24 }}>At Home Comfort Assisted Living · Manteca, CA</p>
           <h1 style={{ fontFamily: F.display, fontSize: "clamp(40px, 7vw, 72px)", fontWeight: 600, color: T.white, lineHeight: 1.08, letterSpacing: "-0.02em", marginBottom: 20 }}>Where Comfort Feels Like Home</h1>
-          <p style={{ fontFamily: F.body, fontSize: "clamp(16px, 2vw, 19px)", color: "rgba(255,255,255,0.65)", lineHeight: 1.7, maxWidth: 500, margin: "0 auto 40px" }}>A small, personalized assisted living home where your loved one is known by name — and cared for like family.</p>
+          <p style={{ fontFamily: F.body, fontSize: "clamp(16px, 2vw, 19px)", color: "rgba(255,255,255,0.65)", lineHeight: 1.7, maxWidth: 500, margin: "0 auto 40px" }}>A small, personalized assisted living home in Manteca, CA where your loved one is known by name — and cared for like family.</p>
         </Reveal>
         <Reveal delay={0.15}><div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
           <BtnPrimary style={{ background: T.gold, boxShadow: "0 4px 24px rgba(196,154,82,0.35)" }} onClick={()=>goTo("Schedule a Tour")}>Schedule a Tour</BtnPrimary>
@@ -256,7 +256,7 @@ function HomePage() {
               <h2 style={{ fontFamily: F.display, fontSize: "clamp(28px, 3.5vw, 38px)", fontWeight: 600, color: T.navy, lineHeight: 1.2, margin: "8px 0 16px" }}>Personal Care,<br/>Not Institutional Care</h2>
               <div style={{ width: 40, height: 2, background: T.gold, marginBottom: 28 }} />
               <p style={{ fontFamily: F.body, fontSize: 16, color: T.textBody, lineHeight: 1.8, marginBottom: 32 }}>
-                We intentionally keep our community small. That means your loved one isn't a room number — they're known by name, by preference, by the way they like their morning coffee. Every care plan is built around the person, not the other way around.
+                We intentionally keep our Manteca home small. That means your loved one isn't a room number — they're known by name, by preference, by the way they like their morning coffee. Every care plan is built around the person, not the other way around.
               </p>
             </Reveal>
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
@@ -675,7 +675,8 @@ function Footer({ setActive }) {
           <img src="/rmvbckgrnd.png" alt="" style={{ height: 44, width: "auto", display: "block" }} />
           <div><div style={{ fontFamily: F.display, fontSize: 15, fontWeight: 700, color: T.white }}>At Home Comfort</div><div style={{ fontFamily: F.body, fontSize: 8, fontWeight: 600, color: T.gold, letterSpacing: "0.2em", textTransform: "uppercase" }}>Assisted Living</div></div>
         </div>
-        <p style={{ fontFamily: F.body, fontSize: 13, color: "rgba(255,255,255,0.4)", lineHeight: 1.7, maxWidth: 240 }}>Intimate assisted living in Manteca where every resident is known, valued, and genuinely cared for.</p>
+        <p style={{ fontFamily: F.body, fontSize: 13, color: "rgba(255,255,255,0.4)", lineHeight: 1.7, maxWidth: 240 }}>Intimate assisted living in Manteca, CA where every resident is known, valued, and genuinely cared for.</p>
+        <p style={{ fontFamily: F.body, fontSize: 11, color: "rgba(255,255,255,0.28)", lineHeight: 1.7, maxWidth: 240, marginTop: 8 }}>Serving Manteca, Stockton, Tracy, Lodi, Modesto &amp; surrounding San Joaquin County communities.</p>
       </div>
       <div style={{ flex: "1 1 120px", minWidth: 100 }}>
         <div style={{ fontFamily: F.body, fontSize: 10, fontWeight: 700, color: T.gold, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 14 }}>Pages</div>
@@ -690,7 +691,10 @@ function Footer({ setActive }) {
         <div style={{ fontFamily: F.body, fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.9 }}><a href="tel:9256058864" style={{ color: "inherit", textDecoration: "none" }}>(925) 605-8864</a><br/><a href="mailto:admin@athomecomfortliving.com" style={{ color: "inherit", textDecoration: "none" }}>admin@athomecomfortliving.com</a><br/>Manteca, CA</div>
       </div>
     </div>
-    <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 20, textAlign: "center" }}><p style={{ fontFamily: F.body, fontSize: 12, color: "rgba(255,255,255,0.25)" }}>&copy; 2026 At Home Comfort Assisted Living. All rights reserved.</p></div>
+    <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 20, display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
+      <p style={{ fontFamily: F.body, fontSize: 12, color: "rgba(255,255,255,0.25)", margin: 0 }}>&copy; 2026 At Home Comfort Assisted Living. All rights reserved.</p>
+      <p style={{ fontFamily: F.body, fontSize: 11, color: "rgba(255,255,255,0.2)", margin: 0 }}>Licensed Assisted Living · Manteca, CA · San Joaquin County</p>
+    </div>
   </div></footer>;
 }
 
@@ -815,10 +819,20 @@ function FAQSchema() {
 }
 
 // APP ROOT
+const PAGE_TITLES = {
+  "Home":             "Assisted Living in Manteca, CA | At Home Comfort Assisted Living",
+  "About":            "Our Story | At Home Comfort Assisted Living — Manteca, CA",
+  "Care & Services":  "Care & Services | Assisted Living in Manteca, CA",
+  "Virtual Tour":     "Virtual Tour | At Home Comfort — Manteca, CA",
+  "Admissions":       "Admissions | Assisted Living in Manteca, CA",
+  "FAQs":             "FAQs About Assisted Living | At Home Comfort — Manteca, CA",
+  "Schedule a Tour":  "Schedule a Tour | At Home Comfort Assisted Living — Manteca, CA",
+};
 export default function App() {
   const [active, setActive] = useState("Home");
   _nav = setActive; // Wire global nav helper
   useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, [active]);
+  useEffect(() => { document.title = PAGE_TITLES[active] || PAGE_TITLES["Home"]; }, [active]);
   const pages = {"Home":<HomePage />,"About":<AboutPage />,"Care & Services":<CareServicesPage />,"Virtual Tour":<VirtualTourPage />,"Admissions":<AdmissionsPage />,"FAQs":<FAQsPage />,"Schedule a Tour":<ScheduleTourPage />};
   return <div style={{ fontFamily: F.body, background: T.cream, minHeight: "100vh", position: "relative" }}>
     <FAQSchema />
