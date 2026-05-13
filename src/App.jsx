@@ -3,8 +3,8 @@ import { useState, useEffect, useRef } from "react";
 const T = {
   navy: "#1A2744", navyLight: "#2A3A5C", gold: "#C49A52", goldLight: "#D4AF6E",
   goldMuted: "rgba(196,154,82,0.13)", goldAccent: "rgba(196,154,82,0.24)",
-  cream: "#F7F1E4", creamDark: "#EDE5D4", white: "#FEFCF8", offWhite: "#FBF6EB",
-  textBody: "#4A4A4A", textLight: "#7A7A7A", border: "#E3D9C6", radius: 12, radiusLg: 18,
+  cream: "#F5ECDB", creamDark: "#EAE0CC", white: "#FEFCF8", offWhite: "#F9F3E4",
+  textBody: "#4A4A4A", textLight: "#7A7A7A", border: "#E0D4BC", radius: 12, radiusLg: 18,
 };
 const F = { display: "'Cormorant Garamond', Georgia, serif", body: "'Outfit', 'Helvetica Neue', sans-serif" };
 
@@ -567,7 +567,7 @@ function Footer({ setActive }) {
       </div>
       <div style={{ flex: "1 1 180px", minWidth: 160 }}>
         <div style={{ fontFamily: F.body, fontSize: 10, fontWeight: 700, color: T.gold, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 14 }}>Contact</div>
-        <div style={{ fontFamily: F.body, fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.9 }}>(209) 555-0178<br/>hello@athomecomfort.com<br/>Manteca, CA</div>
+        <div style={{ fontFamily: F.body, fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.9 }}><a href="tel:9256058864" style={{ color: "inherit", textDecoration: "none" }}>(925) 605-8864</a><br/><a href="mailto:admin@athomecomfortliving.com" style={{ color: "inherit", textDecoration: "none" }}>admin@athomecomfortliving.com</a><br/>Manteca, CA</div>
       </div>
     </div>
     <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 20, textAlign: "center" }}><p style={{ fontFamily: F.body, fontSize: 12, color: "rgba(255,255,255,0.25)" }}>&copy; 2026 At Home Comfort Assisted Living. All rights reserved.</p></div>
@@ -575,7 +575,7 @@ function Footer({ setActive }) {
 }
 
 function MobileCTABar() {
-  return <div className="mob-cta" style={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 900, background: "rgba(253,251,248,0.97)", backdropFilter: "blur(12px)", borderTop: `1px solid ${T.border}`, padding: "10px 16px", display: "flex", gap: 10 }}>
+  return <div className="mob-cta" style={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 900, background: "rgba(249,243,228,0.97)", backdropFilter: "blur(12px)", borderTop: `1px solid ${T.border}`, padding: "10px 16px", display: "flex", gap: 10 }}>
     <BtnSecondary style={{ flex: 1, textAlign: "center", padding: "12px 8px", fontSize: 14 }} onClick={()=>window.location.href="tel:9256058864"}>Call Now</BtnSecondary>
     <BtnPrimary style={{ flex: 1, textAlign: "center", padding: "12px 8px", fontSize: 14 }} onClick={()=>goTo("Schedule a Tour")}>Schedule a Tour</BtnPrimary>
   </div>;
