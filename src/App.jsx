@@ -580,8 +580,21 @@ function MobileCTABar() {
 // PAGE: SCHEDULE A TOUR
 function ScheduleTourPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+  const [fields, setFields] = useState({ name: "", email: "", phone: "", relationship: "", message: "" });
   const inputStyle = { width: "100%", padding: "14px 18px", borderRadius: T.radius, border: `1px solid ${T.border}`, fontFamily: F.body, fontSize: 15, color: T.navy, outline: "none", boxSizing: "border-box", background: T.cream, transition: "border 0.25s" };
   const labelStyle = { fontFamily: F.body, fontSize: 12, fontWeight: 600, color: T.navy, display: "block", marginBottom: 6, letterSpacing: "0.05em" };
+  const set = (k) => (e) => setFields(f => ({ ...f, [k]: e.target.value }));
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ "form-name": "tour-request", ...fields }).toString(),
+    })
+      .then(() => setSubmitted(true))
+      .catch(() => setError(true));
+  };
   return <>
     <PageHero title="Schedule a Tour" subtitle="See our home in person and discover if At Home Comfort is the right fit." />
     <Section bg={T.cream}>
@@ -592,27 +605,37 @@ function ScheduleTourPage() {
               {!submitted ? <>
                 <h3 style={{ fontFamily: F.display, fontSize: 28, fontWeight: 600, color: T.navy, marginBottom: 8 }}>Request a Tour</h3>
                 <p style={{ fontFamily: F.body, fontSize: 14, color: T.textLight, marginBottom: 28, lineHeight: 1.6 }}>Fill out the form below and we'll reach out to confirm a time that works for you.</p>
-                {["Your Name", "Email Address", "Phone Number"].map((label, i) => (
-                  <div key={i} style={{ marginBottom: 18 }}>
-                    <label style={labelStyle}>{label}</label>
-                    <input type="text" placeholder={label} style={inputStyle}
-                      onFocus={e => e.target.style.borderColor = T.gold}
-                      onBlur={e => e.target.style.borderColor = T.border} />
+                <form onSubmit={handleSubmit} name="tour-request" data-netlify="true" data-netlify-honeypot="bot-field">
+                  <input type="hidden" name="form-name" value="tour-request" />
+                  <input type="hidden" name="bot-field" />
+                  <div style={{ marginBottom: 18 }}>
+                    <label style={labelStyle}>Your Name</label>
+                    <input required type="text" name="name" placeholder="Your Name" value={fields.name} onChange={set("name")} style={inputStyle}
+                      onFocus={e => e.target.style.borderColor = T.gold} onBlur={e => e.target.style.borderColor = T.border} />
                   </div>
-                ))}
-                <div style={{ marginBottom: 18 }}>
-                  <label style={labelStyle}>Relationship to Resident</label>
-                  <input type="text" placeholder="e.g. Son, Daughter, Spouse" style={inputStyle}
-                    onFocus={e => e.target.style.borderColor = T.gold}
-                    onBlur={e => e.target.style.borderColor = T.border} />
-                </div>
-                <div style={{ marginBottom: 28 }}>
-                  <label style={labelStyle}>Tell Us About Your Loved One</label>
-                  <textarea rows={4} placeholder="Any details about care needs, preferences, or questions you have..." style={{ ...inputStyle, resize: "vertical" }}
-                    onFocus={e => e.target.style.borderColor = T.gold}
-                    onBlur={e => e.target.style.borderColor = T.border} />
-                </div>
-                <BtnPrimary onClick={()=>setSubmitted(true)} style={{ width: "100%", textAlign: "center", background: T.gold, boxShadow: "0 4px 20px rgba(196,154,82,0.25)" }}>Submit Tour Request</BtnPrimary>
+                  <div style={{ marginBottom: 18 }}>
+                    <label style={labelStyle}>Email Address</label>
+                    <input required type="email" name="email" placeholder="Email Address" value={fields.email} onChange={set("email")} style={inputStyle}
+                      onFocus={e => e.target.style.borderColor = T.gold} onBlur={e => e.target.style.borderColor = T.border} />
+                  </div>
+                  <div style={{ marginBottom: 18 }}>
+                    <label style={labelStyle}>Phone Number</label>
+                    <input type="tel" name="phone" placeholder="Phone Number" value={fields.phone} onChange={set("phone")} style={inputStyle}
+                      onFocus={e => e.target.style.borderColor = T.gold} onBlur={e => e.target.style.borderColor = T.border} />
+                  </div>
+                  <div style={{ marginBottom: 18 }}>
+                    <label style={labelStyle}>Relationship to Resident</label>
+                    <input type="text" name="relationship" placeholder="e.g. Son, Daughter, Spouse" value={fields.relationship} onChange={set("relationship")} style={inputStyle}
+                      onFocus={e => e.target.style.borderColor = T.gold} onBlur={e => e.target.style.borderColor = T.border} />
+                  </div>
+                  <div style={{ marginBottom: 28 }}>
+                    <label style={labelStyle}>Tell Us About Your Loved One</label>
+                    <textarea rows={4} name="message" placeholder="Any details about care needs, preferences, or questions you have..." value={fields.message} onChange={set("message")} style={{ ...inputStyle, resize: "vertical" }}
+                      onFocus={e => e.target.style.borderColor = T.gold} onBlur={e => e.target.style.borderColor = T.border} />
+                  </div>
+                  {error && <p style={{ fontFamily: F.body, fontSize: 14, color: "#c0392b", marginBottom: 16 }}>Something went wrong — please try again or call us directly.</p>}
+                  <button type="submit" style={{ width: "100%", textAlign: "center", background: T.gold, color: T.white, border: "none", borderRadius: T.radius, padding: "14px 32px", fontFamily: F.body, fontSize: 15, fontWeight: 600, cursor: "pointer", boxShadow: "0 4px 20px rgba(196,154,82,0.25)" }}>Submit Tour Request</button>
+                </form>
               </> : <>
                 <div style={{ textAlign: "center", padding: "40px 0" }}>
                   <div style={{ width: 64, height: 64, borderRadius: "50%", background: T.goldMuted, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", color: T.gold }}>
