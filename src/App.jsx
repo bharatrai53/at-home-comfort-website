@@ -278,8 +278,8 @@ function HomePage() {
 
     {/* ─── Full-width photo band ─── */}
     <div style={{ width: "100%", height: "clamp(200px, 30vw, 380px)", overflow: "hidden", position: "relative" }}>
-      <img src="/updatedrooms/IMG_9749.jpg" alt="At Home Comfort living room" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(250,246,239,0.4) 0%, transparent 30%, transparent 70%, rgba(250,246,239,0.4) 100%)" }} />
+      <img src="/updatedrooms/IMG_9749.jpg" alt="At Home Comfort living room" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "contrast(1.08) saturate(1.2) brightness(0.97)" }} />
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(250,246,239,0.15) 0%, transparent 15%, transparent 85%, rgba(250,246,239,0.15) 100%)" }} />
     </div>
 
     {/* ─── CHAPTER 3: How We Care (services woven into narrative) ─── */}
