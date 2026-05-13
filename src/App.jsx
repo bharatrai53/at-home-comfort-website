@@ -312,15 +312,19 @@ function HomePage() {
           <h2 style={{ fontFamily: F.display, fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 600, color: T.navy, lineHeight: 1.2, textAlign: "center", marginBottom: 12 }}>See Where Your Loved One Will Live</h2>
           <GoldDivider />
         </Reveal>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 12, marginTop: 48 }}>
-          {[
-            {src:"/updatedrooms/IMG_9689.jpg",span:"span 4",r:"3/2"},
-            {src:"/updatedrooms/IMG_9700.jpg",span:"span 2",r:"3/2"},
-            {src:"/updatedrooms/IMG_9713.jpg",span:"span 2",r:"1/1"},
-            {src:"/updatedrooms/IMG_9759.jpg",span:"span 4",r:"2/1"},
-          ].map((img,i)=>
-            <Reveal key={i} delay={i*0.08} style={{ gridColumn: img.span }}><ImgPlaceholder src={img.src} aspect={img.r} /></Reveal>
-          )}
+        <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr", gridTemplateRows: "repeat(3, 160px)", gap: 12, marginTop: 48 }}>
+          <Reveal style={{ gridRow: "span 3", borderRadius: T.radiusLg, overflow: "hidden", height: "100%" }}>
+            <img src="/updatedrooms/IMG_9689.jpg" alt="Private bedroom" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+          </Reveal>
+          <Reveal delay={0.08} style={{ borderRadius: T.radiusLg, overflow: "hidden" }}>
+            <img src="/updatedrooms/IMG_9759.jpg" alt="Common living area" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+          </Reveal>
+          <Reveal delay={0.16} style={{ borderRadius: T.radiusLg, overflow: "hidden" }}>
+            <img src="/updatedrooms/IMG_9726.jpg" alt="Home kitchen" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+          </Reveal>
+          <Reveal delay={0.24} style={{ borderRadius: T.radiusLg, overflow: "hidden" }}>
+            <img src="/updatedrooms/IMG_9766.jpg" alt="Private bathroom" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+          </Reveal>
         </div>
       </div>
     </div>
