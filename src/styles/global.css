@@ -89,3 +89,38 @@ textarea:focus {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.amenity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 640px) {
+  .amenity-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+.photo-modal-pad {
+  padding: 24px;
+}
+.photo-modal-title {
+  font-size: 26px;
+}
+.photo-modal-img {
+  max-height: 62vh;
+}
+
+@media (max-width: 640px) {
+  .photo-modal-pad {
+    padding: 14px;
+  }
+  .photo-modal-title {
+    font-size: 20px;
+  }
+  .photo-modal-img {
+    max-height: 52vh;
+  }
+}

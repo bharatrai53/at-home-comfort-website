@@ -515,13 +515,13 @@ function PhotoModal({ title, photos, onClose }) {
     </button>
   );
   return (
-    <div onClick={onClose} style={{ position: "fixed", inset: 0, zIndex: 2000, background: "rgba(10,16,30,0.9)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px", animation: "fadeIn 0.2s ease" }}>
+    <div onClick={onClose} className="photo-modal-pad" style={{ position: "fixed", inset: 0, zIndex: 2000, background: "rgba(10,16,30,0.9)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", display: "flex", alignItems: "center", justifyContent: "center", animation: "fadeIn 0.2s ease" }}>
       <div onClick={e => e.stopPropagation()} style={{ width: "100%", maxWidth: 880, animation: "scaleIn 0.25s ease" }}>
         {/* Header */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 14, padding: "0 2px" }}>
           <div>
             <span style={{ fontFamily: F.body, fontSize: 10, fontWeight: 600, color: T.gold, letterSpacing: "0.22em", textTransform: "uppercase" }}>At Home Comfort</span>
-            <h3 style={{ fontFamily: F.display, fontSize: 26, fontWeight: 600, color: T.white, margin: "4px 0 0", lineHeight: 1 }}>{title}</h3>
+            <h3 className="photo-modal-title" style={{ fontFamily: F.display, fontWeight: 600, color: T.white, margin: "4px 0 0", lineHeight: 1 }}>{title}</h3>
           </div>
           <button onClick={onClose} style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)", color: T.white, width: 36, height: 36, borderRadius: "50%", cursor: "pointer", fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, transition: "background 0.2s" }}>
             <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -529,7 +529,7 @@ function PhotoModal({ title, photos, onClose }) {
         </div>
         {/* Photo */}
         <div style={{ position: "relative", borderRadius: T.radiusLg, overflow: "hidden", background: "rgba(0,0,0,0.4)", lineHeight: 0 }}>
-          <img key={idx} src={photos[idx]} alt={title} style={{ width: "100%", maxHeight: "62vh", objectFit: "contain", display: "block", animation: "imgFade 0.3s ease" }} />
+          <img key={idx} src={photos[idx]} alt={title} className="photo-modal-img" style={{ width: "100%", objectFit: "contain", display: "block", animation: "imgFade 0.3s ease" }} />
           {photos.length > 1 && <><ArrowBtn dir="left" onClick={prev} /><ArrowBtn dir="right" onClick={next} /></>}
         </div>
         {/* Dots + counter */}
@@ -568,7 +568,7 @@ function VirtualTourPage() {
     </Section>
     <Section bg={T.cream}><SectionHeader label="Amenities" title="What Makes Our Home Feel Like Home" />
       <p style={{ fontFamily: F.body, fontSize: 14, color: T.textLight, textAlign: "center", marginTop: -32, marginBottom: 40 }}>Tap any space to see photos</p>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+      <div className="amenity-grid">
         {Object.keys(AMENITY_PHOTOS).map((label, i) => (
           <AmenityCard key={i} label={label} delay={i * 0.06} onClick={() => setModal(label)} />
         ))}
