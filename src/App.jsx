@@ -182,7 +182,7 @@ function Navigation({ active, setActive }) {
           </div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 2 }} className="desk-nav">
-          {navItems.map(item => <button key={item} onClick={()=>setActive(item)} style={{ background: "none", border: "none", padding: "8px 14px", cursor: "pointer", fontFamily: F.body, fontSize: 13.5, fontWeight: active===item?600:400, color: scrolled?(active===item?T.navy:T.textBody):(active===item?"rgba(255,255,255,1)":"rgba(255,255,255,0.7)"), borderBottom: active===item?`2px solid ${T.gold}`:"2px solid transparent", transition: "all 0.25s" }}>{item}</button>)}
+          {navItems.map(item => <button key={item} onClick={()=>setActive(item)} style={{ background: "none", border: "none", padding: "8px 14px", cursor: "pointer", fontFamily: F.body, fontSize: 13.5, fontWeight: active===item?600:400, color: scrolled?(active===item?T.navy:T.textBody):(active===item?"rgba(255,255,255,1)":"rgba(255,255,255,0.7)"), borderBottom: active===item?`2px solid ${T.gold}`:"2px solid transparent", transition: "all 0.25s", fontSize: 15 }}>{item}</button>)}
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <BtnPrimary style={{ padding: "10px 22px", fontSize: 13, display: "var(--desk-show, flex)" }} onClick={()=>goTo("Schedule a Tour")}>Schedule a Tour</BtnPrimary>
