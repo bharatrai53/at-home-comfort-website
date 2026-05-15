@@ -179,6 +179,7 @@ function Navigation({ active, setActive }) {
           <div style={{ lineHeight: 1.2 }}>
             <div style={{ fontFamily: F.display, fontSize: scrolled ? 22 : 26, fontWeight: 700, color: scrolled ? T.navy : T.white, transition: "all 0.4s ease" }}>At Home Comfort</div>
             <div style={{ fontFamily: F.body, fontSize: 11, fontWeight: 600, color: T.gold, letterSpacing: "0.2em", textTransform: "uppercase" }}>Assisted Living</div>
+            <div style={{ fontFamily: F.body, fontSize: 9.5, fontWeight: 500, color: scrolled ? T.textLight : "rgba(255,255,255,0.55)", letterSpacing: "0.04em", marginTop: 2, transition: "color 0.4s ease" }}>Facility License #392701886</div>
           </div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 2 }} className="desk-nav">
