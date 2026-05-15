@@ -175,7 +175,7 @@ function Navigation({ active, setActive }) {
     <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, background: scrolled?"rgba(251,246,235,0.96)":"rgba(26,39,68,0.65)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", borderBottom: scrolled?`1px solid ${T.border}`:"1px solid rgba(255,255,255,0.08)", transition: "all 0.4s ease", padding: scrolled?"4px 0":"16px 0" }}>
       <div style={{ maxWidth: 1160, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: 8 }} onClick={()=>setActive("Home")}>
-          <img src="/rmvbckgrnd.png" alt="" style={{ height: scrolled ? 56 : 68, width: "auto", display: "block", transition: "height 0.4s ease" }} />
+          <img src="/rmvbckgrnd.png" alt="" style={{ height: scrolled ? 80 : 100, width: "auto", display: "block", transition: "height 0.4s ease" }} />
           <div style={{ lineHeight: 1.2 }}>
             <div style={{ fontFamily: F.display, fontSize: scrolled ? 22 : 26, fontWeight: 700, color: scrolled ? T.navy : T.white, transition: "all 0.4s ease" }}>At Home Comfort</div>
             <div style={{ fontFamily: F.body, fontSize: 11, fontWeight: 600, color: T.gold, letterSpacing: "0.2em", textTransform: "uppercase" }}>Assisted Living</div>
