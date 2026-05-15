@@ -675,6 +675,7 @@ function Footer({ setActive }) {
           <img src="/rmvbckgrnd.png" alt="" style={{ height: 44, width: "auto", display: "block" }} />
           <div><div style={{ fontFamily: F.display, fontSize: 15, fontWeight: 700, color: T.white }}>At Home Comfort</div><div style={{ fontFamily: F.body, fontSize: 8, fontWeight: 600, color: T.gold, letterSpacing: "0.2em", textTransform: "uppercase" }}>Assisted Living</div></div>
         </div>
+        <p style={{ fontFamily: F.body, fontSize: 11, color: T.gold, fontWeight: 500, letterSpacing: "0.06em", marginBottom: 10 }}>Facility License #392701886</p>
         <p style={{ fontFamily: F.body, fontSize: 13, color: "rgba(255,255,255,0.4)", lineHeight: 1.7, maxWidth: 240 }}>Intimate assisted living in Manteca, CA where every resident is known, valued, and genuinely cared for.</p>
         <p style={{ fontFamily: F.body, fontSize: 11, color: "rgba(255,255,255,0.28)", lineHeight: 1.7, maxWidth: 240, marginTop: 8 }}>Serving Manteca, Stockton, Tracy, Lodi, Modesto &amp; surrounding San Joaquin County communities.</p>
       </div>
