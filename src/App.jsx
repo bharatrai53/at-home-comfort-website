@@ -277,11 +277,9 @@ function HomePage() {
       </div>
     </div>
 
-    {/* ─── Photo feature ─── */}
-    <div style={{ background: T.cream, padding: "0 32px 80px" }}>
-      <div style={{ maxWidth: 1020, margin: "0 auto", borderRadius: T.radiusLg, overflow: "hidden", boxShadow: "0 20px 64px rgba(26,39,68,0.12)", border: `1px solid ${T.border}` }}>
-        <img src="/updatedrooms/IMG_9749.jpg" alt="At Home Comfort living room" style={{ width: "100%", height: "auto", display: "block", filter: "contrast(1.06) saturate(1.15)" }} />
-      </div>
+    {/* ─── Full-width photo band ─── */}
+    <div style={{ width: "100%", aspectRatio: "21/8", overflow: "hidden", position: "relative" }}>
+      <img src="/updatedrooms/IMG_9749.jpg" alt="At Home Comfort living room" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 40%", display: "block", filter: "contrast(1.06) saturate(1.15)" }} />
     </div>
 
     {/* ─── CHAPTER 3: How We Care (services woven into narrative) ─── */}
