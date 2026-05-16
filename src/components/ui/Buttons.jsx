@@ -24,9 +24,9 @@ export function ButtonBase({ children, style = {}, ...rest }) {
   );
 }
 
-export function ButtonLink({ children, to, style = {} }) {
+export function ButtonLink({ children, to, style = {}, wrapperStyle = {} }) {
   return (
-    <Link to={to} style={{ textDecoration: "none" }}>
+    <Link to={to} style={{ textDecoration: "none", display: "flex", flex: 1, ...wrapperStyle }}>
       <ButtonBase
         style={{
           background: T.navy,

@@ -19,12 +19,16 @@ export function MobileCTABar() {
         gap: 10,
       }}
     >
-      <SecondaryAnchor href="tel:9256058864" style={{ flex: 1, textAlign: "center", padding: "12px 8px", fontSize: 14 }}>
-        Call Us
-      </SecondaryAnchor>
-      <ButtonLink to="/schedule-a-tour/" style={{ flex: 1, textAlign: "center", padding: "12px 8px", fontSize: 14 }}>
-        Schedule a Tour
-      </ButtonLink>
+      <div style={{ flex: 1, display: "flex" }}>
+        <SecondaryAnchor href="tel:9256058864" style={{ flex: 1, justifyContent: "center", padding: "12px 8px", fontSize: 14 }}>
+          Call Us
+        </SecondaryAnchor>
+      </div>
+      <div style={{ flex: 1, display: "flex" }}>
+        <ButtonLink to="/schedule-a-tour/" style={{ flex: 1, justifyContent: "center", padding: "12px 8px", fontSize: 14 }}>
+          Schedule a Tour
+        </ButtonLink>
+      </div>
     </div>
   );
 }
