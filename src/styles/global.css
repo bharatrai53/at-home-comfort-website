@@ -47,7 +47,8 @@ textarea:focus {
     display: flex !important;
   }
   .mob-cta {
-    display: flex !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
   }
   :root {
     --desk-show: none;
