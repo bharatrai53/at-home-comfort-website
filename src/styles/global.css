@@ -13,6 +13,7 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #f5ecdb;
 }
 
 ::selection {
@@ -96,10 +97,19 @@ textarea:focus {
   gap: 20px;
 }
 
+.helpful-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
 @media (max-width: 640px) {
   .amenity-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+  }
+  .helpful-links-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
