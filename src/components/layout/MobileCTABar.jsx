@@ -15,20 +15,17 @@ export function MobileCTABar() {
         backdropFilter: "blur(12px)",
         borderTop: `1px solid ${T.border}`,
         padding: "10px 16px",
-        display: "flex",
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
         gap: 10,
       }}
     >
-      <div style={{ flex: 1, display: "flex" }}>
-        <SecondaryAnchor href="tel:9256058864" style={{ flex: 1, justifyContent: "center", padding: "12px 8px", fontSize: 14 }}>
-          Call Us
-        </SecondaryAnchor>
-      </div>
-      <div style={{ flex: 1, display: "flex" }}>
-        <ButtonLink to="/schedule-a-tour/" style={{ flex: 1, justifyContent: "center", padding: "12px 8px", fontSize: 14 }}>
-          Schedule a Tour
-        </ButtonLink>
-      </div>
+      <SecondaryAnchor href="tel:9256058864" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "12px 8px", fontSize: 14, width: "100%", boxSizing: "border-box" }}>
+        Call Us
+      </SecondaryAnchor>
+      <ButtonLink to="/schedule-a-tour/" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "12px 8px", fontSize: 14, width: "100%", boxSizing: "border-box" }}>
+        Schedule a Tour
+      </ButtonLink>
     </div>
   );
 }

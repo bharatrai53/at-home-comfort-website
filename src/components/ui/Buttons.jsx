@@ -77,7 +77,7 @@ export function ButtonAnchor({ children, href, style = {} }) {
 
 export function SecondaryAnchor({ children, href, style = {} }) {
   return (
-    <a href={href} style={{ textDecoration: "none" }}>
+    <a href={href} style={{ textDecoration: "none", display: "flex", width: "100%" }}>
       <ButtonBase
         style={{
           background: "transparent",
