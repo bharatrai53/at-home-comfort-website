@@ -24,9 +24,9 @@ export function ButtonBase({ children, style = {}, ...rest }) {
   );
 }
 
-export function ButtonLink({ children, to, style = {}, wrapperStyle = {} }) {
+export function ButtonLink({ children, to, style = {} }) {
   return (
-    <Link to={to} style={{ textDecoration: "none", display: "flex", flex: 1, ...wrapperStyle }}>
+    <Link to={to} style={{ textDecoration: "none" }}>
       <ButtonBase
         style={{
           background: T.navy,
@@ -77,7 +77,7 @@ export function ButtonAnchor({ children, href, style = {} }) {
 
 export function SecondaryAnchor({ children, href, style = {} }) {
   return (
-    <a href={href} style={{ textDecoration: "none", display: "flex", width: "100%" }}>
+    <a href={href} style={{ textDecoration: "none" }}>
       <ButtonBase
         style={{
           background: "transparent",
