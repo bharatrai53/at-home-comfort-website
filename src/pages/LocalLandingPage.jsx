@@ -10,7 +10,6 @@ import { PageSEO } from "../components/PageSEO";
 import { PageHero } from "../components/PageHero";
 import { CTABand } from "../components/CTABand";
 import { MicroFAQBlock } from "../components/MicroFAQ";
-import { ExploreMore } from "../components/ExploreMore";
 
 function LocalLandingPage({ config }) {
   return (
@@ -75,7 +74,6 @@ function LocalLandingPage({ config }) {
         </div>
       </Section>
       <MicroFAQBlock title={config.faqTitle} faqs={config.faqs} bg={T.offWhite} />
-      <ExploreMore />
       <CTABand />
     </>
   );

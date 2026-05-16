@@ -2,6 +2,12 @@ import { Link } from "react-router-dom";
 import { T, F } from "../../tokens";
 import { siteLinks } from "../../data";
 
+const localGuideLinks = [
+  { label: "Assisted Living in Manteca, CA", path: "/assisted-living-manteca-ca/" },
+  { label: "Residential Care Home in Manteca, CA", path: "/residential-care-home-manteca-ca/" },
+  { label: "Board & Care Home in Manteca, CA", path: "/board-and-care-manteca-ca/" },
+];
+
 export function Footer() {
   return (
     <footer style={{ background: T.navy, padding: "56px 24px 28px" }}>
@@ -66,6 +72,21 @@ export function Footer() {
                 <Link
                   to={item.path}
                   style={{ fontFamily: F.body, fontSize: 13, color: "rgba(255,255,255,0.55)", textDecoration: "none" }}
+                >
+                  {item.label}
+                </Link>
+              </div>
+            ))}
+          </div>
+          <div style={{ flex: "1 1 180px", minWidth: 140 }}>
+            <div style={{ fontFamily: F.body, fontSize: 10, fontWeight: 700, color: T.gold, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 14 }}>
+              Local Guides
+            </div>
+            {localGuideLinks.map((item) => (
+              <div key={item.path} style={{ marginBottom: 8 }}>
+                <Link
+                  to={item.path}
+                  style={{ fontFamily: F.body, fontSize: 13, color: "rgba(255,255,255,0.55)", textDecoration: "none", lineHeight: 1.5, display: "block" }}
                 >
                   {item.label}
                 </Link>

@@ -8,7 +8,6 @@ import { PageSEO } from "../components/PageSEO";
 import { PageHero } from "../components/PageHero";
 import { CTABand } from "../components/CTABand";
 import { MicroFAQBlock } from "../components/MicroFAQ";
-import { ExploreMore } from "../components/ExploreMore";
 import { Ico } from "../components/Icons";
 import { Reveal } from "../components/ui/Reveal";
 
@@ -70,7 +69,6 @@ export function CareServicesPage() {
         </div>
       </Section>
       <MicroFAQBlock title="Care & Services Questions" faqs={careFaqs} bg={T.offWhite} />
-      <ExploreMore />
       <CTABand />
     </>
   );

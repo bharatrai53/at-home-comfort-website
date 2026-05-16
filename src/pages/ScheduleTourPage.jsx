@@ -6,7 +6,6 @@ import { SectionLabel } from "../components/ui/SectionLabel";
 import { Reveal } from "../components/ui/Reveal";
 import { PageSEO } from "../components/PageSEO";
 import { PageHero } from "../components/PageHero";
-import { ExploreMore } from "../components/ExploreMore";
 
 export function ScheduleTourPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -169,7 +168,6 @@ export function ScheduleTourPage() {
           </div>
         </div>
       </Section>
-      <ExploreMore />
     </>
   );
 }

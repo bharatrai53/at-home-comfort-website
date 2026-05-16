@@ -7,7 +7,6 @@ import { PageSEO } from "../components/PageSEO";
 import { PageHero } from "../components/PageHero";
 import { CTABand } from "../components/CTABand";
 import { MicroFAQBlock } from "../components/MicroFAQ";
-import { ExploreMore } from "../components/ExploreMore";
 
 export function AdmissionsPage() {
   const admissionsFaqs = [
@@ -55,7 +54,6 @@ export function AdmissionsPage() {
         </div>
       </Section>
       <MicroFAQBlock title="Admissions & Cost Questions" faqs={admissionsFaqs} bg={T.cream} />
-      <ExploreMore />
       <CTABand />
     </>
   );

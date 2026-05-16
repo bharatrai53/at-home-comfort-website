@@ -9,7 +9,6 @@ import { IconCard } from "../components/ui/IconCard";
 import { PageSEO } from "../components/PageSEO";
 import { CTABand } from "../components/CTABand";
 import { MicroFAQBlock } from "../components/MicroFAQ";
-import { ExploreMore } from "../components/ExploreMore";
 import { Ico } from "../components/Icons";
 
 export function HomePage() {
@@ -275,7 +274,6 @@ export function HomePage() {
       </div>
 
       <MicroFAQBlock title="Questions Families Ask Most" faqs={homeFaqs} bg={T.offWhite} />
-      <ExploreMore />
       <CTABand />
     </>
   );

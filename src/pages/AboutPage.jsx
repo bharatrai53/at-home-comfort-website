@@ -5,7 +5,6 @@ import { SectionLabel } from "../components/ui/SectionLabel";
 import { Section } from "../components/ui/Section";
 import { PageSEO } from "../components/PageSEO";
 import { CTABand } from "../components/CTABand";
-import { ExploreMore } from "../components/ExploreMore";
 
 export function AboutPage() {
   return (
@@ -87,7 +86,6 @@ export function AboutPage() {
           </Reveal>
         </div>
       </Section>
-      <ExploreMore />
       <CTABand />
     </>
   );

@@ -7,7 +7,6 @@ import { Reveal } from "../components/ui/Reveal";
 import { PageSEO } from "../components/PageSEO";
 import { PageHero } from "../components/PageHero";
 import { CTABand } from "../components/CTABand";
-import { ExploreMore } from "../components/ExploreMore";
 import { FAQHubItem } from "../components/FAQHubItem";
 
 export function FAQsPage() {
@@ -88,7 +87,6 @@ export function FAQsPage() {
           </div>
         </div>
       </Section>
-      <ExploreMore />
       <CTABand />
     </>
   );

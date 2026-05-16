@@ -10,7 +10,6 @@ import { PageSEO } from "../components/PageSEO";
 import { PageHero } from "../components/PageHero";
 import { CTABand } from "../components/CTABand";
 import { MicroFAQBlock } from "../components/MicroFAQ";
-import { ExploreMore } from "../components/ExploreMore";
 import { PhotoModal } from "../components/PhotoModal";
 import { AmenityCard } from "../components/AmenityCard";
 
@@ -70,7 +69,6 @@ export function VirtualTourPage() {
         </div>
       </Section>
       <MicroFAQBlock title="About Our Home" faqs={tourFaqs} bg={T.offWhite} />
-      <ExploreMore />
       <CTABand />
     </>
   );
