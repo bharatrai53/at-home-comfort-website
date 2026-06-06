@@ -164,7 +164,7 @@ export function HomePage() {
       </div>
 
       <div style={{ width: "100%", aspectRatio: "21/8", overflow: "hidden", position: "relative" }}>
-        <img src="/updatedrooms/IMG_9749.jpg" alt="Comfortable shared living area inside the home" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 40%", display: "block", filter: "contrast(1.06) saturate(1.15)" }} />
+        <img src="/updatedrooms/IMG_0242.jpeg" alt="Bright open common living and dining area inside At Home Comfort Assisted Living" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 40%", display: "block", filter: "contrast(1.06) saturate(1.15)" }} />
       </div>
 
       <div style={{ background: T.cream, padding: "100px 24px" }}>
