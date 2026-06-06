@@ -18,14 +18,14 @@ function LocalLandingPage({ config }) {
         title={config.title}
         description={config.description}
         path={config.path}
-        image="https://athomecomfortliving.com/outside.jpg"
+        image="https://athomecomfortliving.com/updatedrooms/IMG_0242.jpeg"
         faqs={config.faqs}
         crumbs={[
           { name: "Home", path: "/" },
           { name: config.h1, path: config.path },
         ]}
       />
-      <PageHero title={config.h1} subtitle={config.description} image="/outside.jpg" alt="Exterior of At Home Comfort Assisted Living in Manteca" />
+      <PageHero title={config.h1} subtitle={config.description} image="/updatedrooms/IMG_0242.jpeg" alt="Exterior of At Home Comfort Assisted Living in Manteca" />
       <Section bg={T.offWhite}>
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <Reveal>
