@@ -42,45 +42,211 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Manteca (home city) — all three service types -->
   <url>
     <loc>https://athomecomfortliving.com/assisted-living-manteca-ca/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://athomecomfortliving.com/residential-care-home-manteca-ca/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://athomecomfortliving.com/board-and-care-manteca-ca/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Stockton -->
   <url>
     <loc>https://athomecomfortliving.com/senior-care-home-stockton-ca/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://athomecomfortliving.com/assisted-living-stockton-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/board-and-care-stockton-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Lathrop -->
   <url>
     <loc>https://athomecomfortliving.com/senior-care-home-lathrop-ca/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://athomecomfortliving.com/assisted-living-lathrop-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/board-and-care-lathrop-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Ripon -->
   <url>
     <loc>https://athomecomfortliving.com/senior-care-home-ripon-ca/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://athomecomfortliving.com/assisted-living-ripon-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/board-and-care-ripon-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Tracy -->
+  <url>
     <loc>https://athomecomfortliving.com/senior-care-home-tracy-ca/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/assisted-living-tracy-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/board-and-care-tracy-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Lodi -->
+  <url>
+    <loc>https://athomecomfortliving.com/assisted-living-lodi-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/board-and-care-lodi-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/senior-care-home-lodi-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Modesto -->
+  <url>
+    <loc>https://athomecomfortliving.com/assisted-living-modesto-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/board-and-care-modesto-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/senior-care-home-modesto-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- San Joaquin County -->
+  <url>
+    <loc>https://athomecomfortliving.com/assisted-living-san-joaquin-county/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- San Joaquin County — additional cities -->
+  <url>
+    <loc>https://athomecomfortliving.com/senior-care-home-french-camp-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/senior-care-home-escalon-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Stanislaus County -->
+  <url>
+    <loc>https://athomecomfortliving.com/senior-care-home-riverbank-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/senior-care-home-oakdale-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/senior-care-home-ceres-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Tri-Valley / East Bay -->
+  <url>
+    <loc>https://athomecomfortliving.com/senior-care-home-livermore-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/senior-care-home-pleasanton-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/senior-care-home-dublin-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://athomecomfortliving.com/senior-care-home-san-ramon-ca/</loc>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

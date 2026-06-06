@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { T, F } from "../tokens";
-import { localPageConfigs } from "../data/localPages";
+import { localPageConfigs, cityHubs } from "../data/localPages";
 import { Section } from "../components/ui/Section";
 import { SectionHeader } from "../components/ui/SectionHeader";
 import { SectionLabel } from "../components/ui/SectionLabel";
@@ -74,6 +74,36 @@ function LocalLandingPage({ config }) {
         </div>
       </Section>
       <MicroFAQBlock title={config.faqTitle} faqs={config.faqs} bg={T.offWhite} />
+      <Section bg={T.cream}>
+        <div style={{ maxWidth: 860, margin: "0 auto" }}>
+          <p style={{ fontFamily: F.body, fontSize: 13, fontWeight: 600, color: T.gold, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 16 }}>
+            Also Serving Families Near
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+            {cityHubs
+              .filter((hub) => hub.path !== config.path)
+              .map((hub) => (
+                <Link
+                  key={hub.path}
+                  to={hub.path}
+                  style={{
+                    fontFamily: F.body,
+                    fontSize: 13.5,
+                    fontWeight: 500,
+                    color: T.navy,
+                    background: T.white,
+                    border: `1px solid ${T.border}`,
+                    borderRadius: 999,
+                    padding: "6px 16px",
+                    textDecoration: "none",
+                  }}
+                >
+                  {hub.label}
+                </Link>
+              ))}
+          </div>
+        </div>
+      </Section>
       <CTABand />
     </>
   );
