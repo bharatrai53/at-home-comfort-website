@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const SITE_URL = "https://athomecomfortliving.com";
-const DEFAULT_IMAGE = `${SITE_URL}/updatedrooms/IMG_0242.jpeg`;
+const DEFAULT_IMAGE = `${SITE_URL}/outside.jpg`;
 
 function upsertMeta(selector, attributes) {
   let tag = document.head.querySelector(selector);
