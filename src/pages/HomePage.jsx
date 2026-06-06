@@ -11,6 +11,35 @@ import { CTABand } from "../components/CTABand";
 import { MicroFAQBlock } from "../components/MicroFAQ";
 import { Ico } from "../components/Icons";
 
+const TICKER_CITIES = [
+  "Manteca", "Stockton", "Lathrop", "Ripon", "Tracy", "Lodi", "Modesto",
+  "French Camp", "Escalon", "Riverbank", "Oakdale", "Ceres",
+  "Livermore", "Pleasanton", "Dublin", "San Ramon", "San Joaquin County",
+];
+
+function CityTicker() {
+  const items = [...TICKER_CITIES, ...TICKER_CITIES];
+  return (
+    <div style={{ background: T.navyLight, borderTop: "1px solid rgba(196,154,82,0.18)", borderBottom: "1px solid rgba(196,154,82,0.18)", overflow: "hidden", display: "flex", alignItems: "center", height: 48 }}>
+      <div style={{ flexShrink: 0, padding: "0 20px 0 24px", borderRight: "1px solid rgba(196,154,82,0.25)", height: "100%", display: "flex", alignItems: "center", gap: 8 }}>
+        <span style={{ fontFamily: F.body, fontSize: 10, fontWeight: 700, color: T.gold, letterSpacing: "0.22em", textTransform: "uppercase", whiteSpace: "nowrap" }}>
+          Now Serving
+        </span>
+      </div>
+      <div style={{ overflow: "hidden", flex: 1 }}>
+        <div style={{ display: "flex", animation: "ticker 40s linear infinite", willChange: "transform" }}>
+          {items.map((city, i) => (
+            <span key={i} style={{ display: "inline-flex", alignItems: "center", fontFamily: F.body, fontSize: 13, fontWeight: 400, color: "rgba(255,255,255,0.72)", whiteSpace: "nowrap", paddingRight: 8 }}>
+              {city}
+              <span style={{ color: T.gold, margin: "0 16px", fontSize: 10 }}>·</span>
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function HomePage() {
   const homeFaqs = [
     FAQ_DATA.fitCare[0],
@@ -63,6 +92,8 @@ export function HomePage() {
           <div style={{ fontFamily: F.body, fontSize: 10, color: "rgba(255,255,255,0.5)", letterSpacing: "0.15em", textTransform: "uppercase" }}>Scroll</div>
         </div>
       </div>
+
+      <CityTicker />
 
       <div style={{ background: T.cream, padding: "100px 24px 0" }}>
         <div style={{ ...W, textAlign: "center" }}>
