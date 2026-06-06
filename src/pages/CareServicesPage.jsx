@@ -1,4 +1,4 @@
-import { T } from "../tokens";
+import { T, F } from "../tokens";
 import { FAQ_DATA } from "../data";
 import { Section } from "../components/ui/Section";
 import { SectionHeader } from "../components/ui/SectionHeader";
@@ -68,7 +68,55 @@ export function CareServicesPage() {
           </Reveal>
         </div>
       </Section>
-      <MicroFAQBlock title="Care & Services Questions" faqs={careFaqs} bg={T.offWhite} />
+      <Section bg={T.offWhite}>
+        <div style={{ maxWidth: 860, margin: "0 auto" }}>
+          <Reveal>
+            <h2 style={{ fontFamily: F.display, fontSize: "clamp(26px, 3vw, 34px)", fontWeight: 600, color: T.navy, lineHeight: 1.25, marginBottom: 8 }}>
+              Assisted Living Services at Our Manteca Home
+            </h2>
+            <div style={{ width: 40, height: 2, background: T.gold, marginBottom: 36 }} />
+          </Reveal>
+
+          {[
+            {
+              title: "Daily Living Support (ADL Assistance)",
+              body: "Activities of daily living — bathing, dressing, grooming, toileting, and personal hygiene — are the building blocks of a comfortable day. For many residents, needing help with these tasks is the primary reason their family begins exploring assisted living. Our caregivers provide that help with patience and consistency, respecting each person's pace and preference. Support is delivered discreetly and with dignity, so residents feel cared for rather than managed.",
+            },
+            {
+              title: "Medication Routines",
+              body: "Consistent medication routines matter for health and safety. Our team supports residents with their prescribed medication schedules using a structured daily process. We track timing, monitor adherence, and communicate with families and healthcare providers as needed. Families often tell us that knowing medications are handled reliably is one of the biggest sources of peace of mind after a loved one moves in.",
+            },
+            {
+              title: "Home-Cooked Nutritious Meals",
+              body: "Meals at our home are prepared fresh and served in a home-style setting rather than a cafeteria. We prioritize warm, balanced, and familiar food that supports both physical health and emotional comfort. Dietary preferences, restrictions, and cultural considerations can be accommodated. Shared mealtimes also create a natural rhythm to the day and a sense of community among residents.",
+            },
+            {
+              title: "Mobility Assistance and Fall Prevention",
+              body: "Safe movement throughout the home — getting in and out of bed, walking to meals, navigating the bathroom — is something many seniors need help with. Our team provides hands-on mobility assistance and monitors the home environment for fall risks. We balance supporting safe movement with encouraging as much independence as each resident can safely maintain.",
+            },
+            {
+              title: "Activities, Engagement, and Daily Routine",
+              body: "Meaningful daily activity is part of what makes life feel worthwhile. We provide structured routines that include light activities, social time, rest, and engagement suited to each resident's interests and energy levels. Whether that means a morning walk in the garden, a quiet activity indoors, or simply conversation with a familiar caregiver, we work to make each day feel purposeful and not just managed.",
+            },
+            {
+              title: "24/7 On-Site Care Staff",
+              body: "Our care team is present around the clock. Residents are never alone when they need help — whether that is during the night, early in the morning, or in an unexpected moment. Round-the-clock staffing also allows us to monitor health changes promptly and communicate with families before small concerns become larger ones. For families, knowing someone is always there is one of the most reassuring aspects of residential care.",
+            },
+          ].map((service, i) => (
+            <Reveal key={service.title} delay={i * 0.05}>
+              <div style={{ marginBottom: 32, paddingBottom: 32, borderBottom: i < 5 ? `1px solid ${T.border}` : "none" }}>
+                <h3 style={{ fontFamily: F.display, fontSize: "clamp(18px, 2vw, 22px)", fontWeight: 600, color: T.navy, marginBottom: 10 }}>
+                  {service.title}
+                </h3>
+                <p style={{ fontFamily: F.body, fontSize: 15, color: T.textBody, lineHeight: 1.85, margin: 0 }}>
+                  {service.body}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+      <MicroFAQBlock title="Care & Services Questions" faqs={careFaqs} bg={T.cream} />
       <CTABand />
     </>
   );

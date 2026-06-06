@@ -15,6 +15,18 @@ export function AboutPage() {
         path="/about/"
         image="https://athomecomfortliving.com/IMG_1960.JPEG"
         crumbs={[{ name: "Home", path: "/" }, { name: "About", path: "/about/" }]}
+        extraSchema={[{
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Parminder",
+          "jobTitle": "Founder",
+          "worksFor": {
+            "@type": "LocalBusiness",
+            "name": "At Home Comfort Assisted Living",
+            "url": "https://athomecomfortliving.com"
+          },
+          "description": "Founder of At Home Comfort Assisted Living in Manteca, CA — a licensed residential care home built on personal family experience providing dignified, compassionate senior care."
+        }]}
       />
       <div style={{ position: "relative", width: "100%", minHeight: 380, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", background: `linear-gradient(to bottom, #3D2010 0%, #8B5220 35%, ${T.gold} 65%, #F0DFB8 85%, ${T.offWhite} 100%)` }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 65% 35%, rgba(255,215,100,0.3) 0%, transparent 60%)" }} />
@@ -82,6 +94,23 @@ export function AboutPage() {
                 Parminder, Founder
               </span>
               <div style={{ width: 24, height: 1, background: T.gold }} />
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+      <Section bg={T.offWhite}>
+        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
+          <Reveal>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 14, background: T.cream, border: `1px solid ${T.border}`, borderRadius: T.radiusLg, padding: "16px 28px" }}>
+              <div style={{ width: 8, height: 8, borderRadius: "50%", background: T.gold, flexShrink: 0 }} />
+              <div style={{ textAlign: "left" }}>
+                <p style={{ fontFamily: F.body, fontSize: 11, fontWeight: 700, color: T.gold, letterSpacing: "0.18em", textTransform: "uppercase", margin: "0 0 3px" }}>
+                  Licensed Residential Care Facility
+                </p>
+                <p style={{ fontFamily: F.body, fontSize: 14, color: T.navy, fontWeight: 500, margin: 0 }}>
+                  California RCFE License #392701886 · Manteca, CA · San Joaquin County
+                </p>
+              </div>
             </div>
           </Reveal>
         </div>

@@ -36,6 +36,26 @@ function LocalLandingPage({ config }) {
           </Reveal>
           {config.paragraphs.map((paragraph, index) => (
             <Reveal key={paragraph.slice(0, 30)} delay={index * 0.03}>
+              {index === 0 && (
+                <h2 style={{ fontFamily: F.display, fontSize: "clamp(20px, 2.5vw, 26px)", fontWeight: 600, color: T.navy, lineHeight: 1.3, margin: "8px 0 12px" }}>
+                  Why Families Choose a Small Residential Care Home
+                </h2>
+              )}
+              {index === 2 && (
+                <h2 style={{ fontFamily: F.display, fontSize: "clamp(20px, 2.5vw, 26px)", fontWeight: 600, color: T.navy, lineHeight: 1.3, margin: "28px 0 12px" }}>
+                  Personalized Daily Living Support
+                </h2>
+              )}
+              {index === 4 && (
+                <h2 style={{ fontFamily: F.display, fontSize: "clamp(20px, 2.5vw, 26px)", fontWeight: 600, color: T.navy, lineHeight: 1.3, margin: "28px 0 12px" }}>
+                  A Calm and Welcoming Environment
+                </h2>
+              )}
+              {index === 6 && (
+                <h2 style={{ fontFamily: F.display, fontSize: "clamp(20px, 2.5vw, 26px)", fontWeight: 600, color: T.navy, lineHeight: 1.3, margin: "28px 0 12px" }}>
+                  Schedule a Private Tour
+                </h2>
+              )}
               <p style={{ fontFamily: F.body, fontSize: 16, color: T.textBody, lineHeight: 1.9, marginBottom: 22 }}>
                 {paragraph}
               </p>
