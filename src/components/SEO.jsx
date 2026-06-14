@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { HeadCollectorCtx } from "../seo/HeadCollector";
 
 const SITE_URL = "https://athomecomfortliving.com";
 const DEFAULT_IMAGE = `${SITE_URL}/outside.jpg`;
@@ -39,6 +40,11 @@ export default function SEO({
   jsonLd = [],
 }) {
   const canonical = absoluteUrl(pathname);
+
+  // SSR only: feed title/description/canonical to the prerender script.
+  // HeadCollectorCtx is null on the client, so this is a no-op after hydration.
+  const collectHead = useContext(HeadCollectorCtx);
+  if (collectHead) collectHead({ title, description, canonical, image });
 
   useEffect(() => {
     document.title = title;
