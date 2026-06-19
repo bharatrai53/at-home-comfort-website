@@ -203,7 +203,7 @@ export function Navigation() {
             <ButtonLink to="/schedule-a-tour/" style={{ flex: 1, textAlign: "center" }}>
               Schedule a Tour
             </ButtonLink>
-            <SecondaryAnchor href="tel:9256058864" style={{ flex: 1, textAlign: "center" }}>
+            <SecondaryAnchor href="tel:9256056218" style={{ flex: 1, textAlign: "center" }}>
               Call Us
             </SecondaryAnchor>
           </div>

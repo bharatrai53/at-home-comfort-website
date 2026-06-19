@@ -98,8 +98,8 @@ export function Footer() {
               Contact
             </div>
             <div style={{ fontFamily: F.body, fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.9 }}>
-              <a href="tel:9256058864" style={{ color: "inherit", textDecoration: "none" }}>
-                (925) 605-8864
+              <a href="tel:9256056218" style={{ color: "inherit", textDecoration: "none" }}>
+                (925) 605-6218
               </a>
               <br />
               <a href="mailto:admin@athomecomfortliving.com" style={{ color: "inherit", textDecoration: "none" }}>

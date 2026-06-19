@@ -82,7 +82,7 @@ export function FAQsPage() {
             </div>
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
               <ButtonLink to="/schedule-a-tour/">Schedule a Tour</ButtonLink>
-              <SecondaryAnchor href="tel:9256058864">Call Us</SecondaryAnchor>
+              <SecondaryAnchor href="tel:9256056218">Call Us</SecondaryAnchor>
             </div>
           </div>
         </div>

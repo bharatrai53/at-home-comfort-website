@@ -20,7 +20,7 @@ export function MobileCTABar() {
         gap: 10,
       }}
     >
-      <a href="tel:9256058864" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "12px 0", fontSize: 14, fontFamily: "inherit", fontWeight: 600, color: "#1A2744", border: "1.5px solid #C49A52", borderRadius: 12, textDecoration: "none", background: "transparent", boxSizing: "border-box" }}>
+      <a href="tel:9256056218" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "12px 0", fontSize: 14, fontFamily: "inherit", fontWeight: 600, color: "#1A2744", border: "1.5px solid #C49A52", borderRadius: 12, textDecoration: "none", background: "transparent", boxSizing: "border-box" }}>
         Call Us
       </a>
       <a href="/schedule-a-tour/" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "12px 0", fontSize: 14, fontFamily: "inherit", fontWeight: 600, color: "#FEFCF8", border: "none", borderRadius: 12, textDecoration: "none", background: "#1A2744", boxSizing: "border-box", boxShadow: "0 2px 8px rgba(26,39,68,0.15)" }}>

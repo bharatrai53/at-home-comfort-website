@@ -59,7 +59,7 @@ export function CTABand() {
             Schedule a Tour
           </ButtonLink>
           <SecondaryAnchor
-            href="tel:9256058864"
+            href="tel:9256056218"
             style={{ color: T.white, borderColor: "rgba(255,255,255,0.3)" }}
           >
             Call Us

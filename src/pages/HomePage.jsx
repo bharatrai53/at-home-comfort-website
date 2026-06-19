@@ -81,7 +81,7 @@ export function HomePage() {
               <ButtonLink to="/schedule-a-tour/" style={{ background: T.gold, boxShadow: "0 4px 24px rgba(196,154,82,0.35)" }}>
                 Schedule a Tour
               </ButtonLink>
-              <SecondaryAnchor href="tel:9256058864" style={{ color: T.white, borderColor: "rgba(255,255,255,0.3)" }}>
+              <SecondaryAnchor href="tel:9256056218" style={{ color: T.white, borderColor: "rgba(255,255,255,0.3)" }}>
                 Call Us
               </SecondaryAnchor>
             </div>
