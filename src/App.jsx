@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { SiteLayout } from "./components/layout/SiteLayout";
 import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
@@ -7,6 +7,7 @@ import { VirtualTourPage } from "./pages/VirtualTourPage";
 import { AdmissionsPage } from "./pages/AdmissionsPage";
 import { FAQsPage } from "./pages/FAQsPage";
 import { ScheduleTourPage } from "./pages/ScheduleTourPage";
+import { NotFoundPage } from "./pages/NotFoundPage";
 import { localLandingRoutes } from "./pages/LocalLandingPage";
 
 export default function App() {
@@ -23,7 +24,7 @@ export default function App() {
         {localLandingRoutes.map((route) => (
           <Route key={route.path} path={route.path} element={route.element} />
         ))}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </SiteLayout>
   );

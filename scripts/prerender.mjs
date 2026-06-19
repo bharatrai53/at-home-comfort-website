@@ -33,7 +33,7 @@ const { localPageConfigs } = await import(
   pathToFileURL(path.join(root, 'src/data/localPages.js')).href
 )
 
-const allRoutes = [...staticRoutes, ...localPageConfigs.map((c) => c.path)]
+const allRoutes = [...staticRoutes, ...localPageConfigs.map((c) => c.path), '/404']
 
 // ─── Build SSR bundle ─────────────────────────────────────────────────────────
 console.log(`\nBuilding SSR bundle for ${allRoutes.length} routes…`)
@@ -128,12 +128,17 @@ for (const routePath of allRoutes) {
       `<div id="root" data-ssr="true">${appHtml}</div>`
     )
 
-    // '/'  → dist/index.html (overwrite Vite's empty shell)
+    // '/'    → dist/index.html
+    // '/404' → dist/404.html  (flat file Netlify serves for unmatched paths)
     // '/foo/' → dist/foo/index.html
-    const slug = routePath.replace(/^\//, '').replace(/\/$/, '')
-    const outputDir = slug ? path.join(distDir, slug) : distDir
-    fs.mkdirSync(outputDir, { recursive: true })
-    fs.writeFileSync(path.join(outputDir, 'index.html'), html, 'utf-8')
+    if (routePath === '/404') {
+      fs.writeFileSync(path.join(distDir, '404.html'), html, 'utf-8')
+    } else {
+      const slug = routePath.replace(/^\//, '').replace(/\/$/, '')
+      const outputDir = slug ? path.join(distDir, slug) : distDir
+      fs.mkdirSync(outputDir, { recursive: true })
+      fs.writeFileSync(path.join(outputDir, 'index.html'), html, 'utf-8')
+    }
 
     process.stdout.write(`  ✓ ${routePath}\n`)
     ok++

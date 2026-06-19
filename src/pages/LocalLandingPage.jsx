@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { T, F } from "../tokens";
 import { localPageConfigs, cityHubs } from "../data/localPages";
+import { buildLocalBusinessSchema } from "../seo/schema";
 import { Section } from "../components/ui/Section";
 import { SectionHeader } from "../components/ui/SectionHeader";
 import { SectionLabel } from "../components/ui/SectionLabel";
@@ -24,6 +25,7 @@ function LocalLandingPage({ config }) {
           { name: "Home", path: "/" },
           { name: config.h1, path: config.path },
         ]}
+        extraSchema={[buildLocalBusinessSchema()]}
       />
       <PageHero title={config.h1} subtitle={config.description} image="/outside.jpg" alt="Exterior of At Home Comfort Assisted Living in Manteca" />
       <Section bg={T.offWhite}>
