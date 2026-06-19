@@ -46,6 +46,7 @@ export function buildLocalBusinessSchema() {
     name: "At Home Comfort Assisted Living",
     url: `${SITE_URL}/`,
     telephone: "+1-925-605-6218",
+    faxNumber: "+1-209-647-2163",
     email: "admin@athomecomfortliving.com",
     address: {
       "@type": "PostalAddress",

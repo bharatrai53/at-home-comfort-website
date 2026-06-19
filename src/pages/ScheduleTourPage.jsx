@@ -145,6 +145,7 @@ export function ScheduleTourPage() {
               <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                 {[
                   { icon: Ico.phone, label: "925-605-6218", href: "tel:9256056218" },
+                  { icon: Ico.phone, label: "Fax: 209-647-2163" },
                   { icon: Ico.mail, label: "admin@athomecomfortliving.com", href: "mailto:admin@athomecomfortliving.com" },
                   { icon: Ico.location, label: "Manteca, CA" },
                 ].map((contact) => (

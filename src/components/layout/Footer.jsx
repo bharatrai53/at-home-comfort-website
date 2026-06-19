@@ -102,6 +102,8 @@ export function Footer() {
                 (925) 605-6218
               </a>
               <br />
+              Fax: (209) 647-2163
+              <br />
               <a href="mailto:admin@athomecomfortliving.com" style={{ color: "inherit", textDecoration: "none" }}>
                 admin@athomecomfortliving.com
               </a>
