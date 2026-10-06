@@ -1,15 +1,7 @@
-const SITE_URL = "https://athomecomfortliving.com";
+import { assistedLivingAreas } from "../data/localPages";
+import { SITE_URL, SITE_NAME } from "./site";
 
-export const serviceAreas = [
-  "Manteca",
-  "Stockton",
-  "Lathrop",
-  "Ripon",
-  "Tracy",
-  "Lodi",
-  "Modesto",
-  "San Joaquin County",
-];
+export const serviceAreas = assistedLivingAreas.map(({ label }) => label);
 
 export function buildBreadcrumbSchema(items) {
   return {
@@ -43,7 +35,10 @@ export function buildLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "At Home Comfort Assisted Living",
+    "@id": `${SITE_URL}/#business`,
+    name: SITE_NAME,
+    image: `${SITE_URL}/outside.jpg`,
+    logo: `${SITE_URL}/rmvbckgrnd.png`,
     url: `${SITE_URL}/`,
     telephone: "+1-925-605-6218",
     faxNumber: "+1-209-647-2163",
@@ -58,5 +53,14 @@ export function buildLocalBusinessSchema() {
     description:
       "Small personalized assisted living home in Manteca, CA providing warm, family-style senior care.",
     identifier: "Facility License #392701886",
+  };
+}
+
+export function buildWebsiteSchema() {
+  return {
+    "@context": "https://schema.org", "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`, url: `${SITE_URL}/`, name: SITE_NAME,
+    alternateName: "At Home Comfort", inLanguage: "en-US",
+    publisher: { "@id": `${SITE_URL}/#business` },
   };
 }

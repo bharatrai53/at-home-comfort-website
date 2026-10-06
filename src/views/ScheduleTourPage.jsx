@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { T, F } from "../tokens";
 import { Ico } from "../components/Icons";
@@ -46,12 +48,15 @@ export function ScheduleTourPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("/", {
+    fetch("/tour-form.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({ "form-name": "tour-request", ...fields }).toString(),
     })
-      .then(() => setSubmitted(true))
+      .then((response) => {
+        if (!response.ok) throw new Error("Tour request failed");
+        setSubmitted(true);
+      })
       .catch(() => setError(true));
   };
 
@@ -69,7 +74,7 @@ export function ScheduleTourPage() {
       <PageHero title="Schedule a Tour" subtitle="See our home in person and discover if At Home Comfort is the right fit." />
       <Section bg={T.cream}>
         <div style={{ display: "flex", gap: 56, flexWrap: "wrap", alignItems: "flex-start" }}>
-          <div style={{ flex: "1 1 460px", minWidth: 280 }}>
+          <div style={{ flex: "1 1 460px", minWidth: "min(280px, 100%)" }}>
             <Reveal>
               <div style={{ background: T.white, borderRadius: T.radiusLg, padding: "40px 36px", border: `1px solid ${T.border}`, boxShadow: "0 4px 24px rgba(0,0,0,0.04)" }}>
                 {submitted ? (
@@ -127,7 +132,7 @@ export function ScheduleTourPage() {
               </div>
             </Reveal>
           </div>
-          <div style={{ flex: "1 1 320px", minWidth: 260 }}>
+          <div style={{ flex: "1 1 320px", minWidth: "min(260px, 100%)" }}>
             <Reveal delay={0.1}>
               <div style={{ marginBottom: 36 }}>
                 <SectionLabel text="What to Expect" align="left" />

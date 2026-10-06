@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { T, F } from "../../tokens";
 import { Reveal } from "./Reveal";

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { T, F } from "../tokens";
 import { helpfulLinks } from "../data";
 import { Section } from "./ui/Section";
@@ -28,7 +28,7 @@ export function ExploreMore() {
         {helpfulLinks.map((link, index) => (
           <Reveal key={link.path} delay={index * 0.04}>
             <Link
-              to={link.path}
+              href={link.path}
               style={{
                 display: "block",
                 background: T.white,

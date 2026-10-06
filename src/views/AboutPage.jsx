@@ -1,3 +1,4 @@
+import { SiteImage } from "../components/SiteImage";
 import { T, F } from "../tokens";
 import { Reveal } from "../components/ui/Reveal";
 import { GoldDivider } from "../components/ui/GoldDivider";
@@ -62,7 +63,7 @@ export function AboutPage() {
             </div>
             <div className="founder-image" style={{ width: "28%", flexShrink: 0 }}>
               <div style={{ borderRadius: 24, overflow: "hidden", boxShadow: "0 12px 40px rgba(26,39,68,0.18)", border: `2px solid ${T.navy}` }}>
-                <img src="/IMG_1960.JPEG" alt="Parminder with her grandmother Kishan, the inspiration behind At Home Comfort Assisted Living" loading="lazy" style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "4/5" }} />
+                <SiteImage src="/IMG_1960.JPEG" alt="Parminder with her grandmother Kishan, the inspiration behind At Home Comfort Assisted Living" loading="lazy" style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "4/5" }} />
               </div>
               <p style={{ fontFamily: F.display, fontSize: 13, color: T.textLight, fontStyle: "italic", textAlign: "center", marginTop: 10 }}>
                 Parminder with her grandmother, Kishan

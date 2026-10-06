@@ -21,7 +21,7 @@ export const cityHubs = [
 export const localPageConfigs = [
   {
     path: "/assisted-living-manteca-ca/",
-    title: "Assisted Living in Manteca, CA | At Home Comfort Assisted Living",
+    title: "Small Assisted Living Home in Manteca | At Home Comfort",
     description:
       "Explore assisted living in Manteca, CA with a small, personalized care home offering daily support, meals, medication routines, and private tours.",
     h1: "Assisted Living in Manteca, CA",
@@ -254,7 +254,9 @@ export const localPageConfigs = [
   // ── Stockton additional service types ────────────────────────────────────
   {
     path: "/assisted-living-stockton-ca/",
-    title: "Assisted Living near Stockton, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near Stockton, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near Stockton, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Looking for assisted living near Stockton, CA? Our small, licensed assisted living home in Manteca offers personalized senior care, meals, and private tours.",
     h1: "Assisted Living near Stockton, CA",
@@ -322,7 +324,9 @@ export const localPageConfigs = [
   // ── Tracy additional service types ───────────────────────────────────────
   {
     path: "/assisted-living-tracy-ca/",
-    title: "Assisted Living near Tracy, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near Tracy, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near Tracy, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Looking for assisted living near Tracy, CA? Our small licensed assisted living home in Manteca serves Tracy families with personalized senior care and private tours.",
     h1: "Assisted Living near Tracy, CA",
@@ -390,7 +394,9 @@ export const localPageConfigs = [
   // ── Lathrop additional service types ─────────────────────────────────────
   {
     path: "/assisted-living-lathrop-ca/",
-    title: "Assisted Living near Lathrop, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near Lathrop, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near Lathrop, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Looking for assisted living near Lathrop, CA? Our small licensed assisted living home in Manteca offers personalized senior care, meals, and private family tours.",
     h1: "Assisted Living near Lathrop, CA",
@@ -458,7 +464,9 @@ export const localPageConfigs = [
   // ── Ripon additional service types ───────────────────────────────────────
   {
     path: "/assisted-living-ripon-ca/",
-    title: "Assisted Living near Ripon, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near Ripon, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near Ripon, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Looking for assisted living near Ripon, CA? Our small licensed assisted living home in Manteca serves Ripon families with personalized senior care and private tours.",
     h1: "Assisted Living near Ripon, CA",
@@ -526,7 +534,9 @@ export const localPageConfigs = [
   // ── Lodi ─────────────────────────────────────────────────────────────────
   {
     path: "/assisted-living-lodi-ca/",
-    title: "Assisted Living near Lodi, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near Lodi, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near Lodi, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Looking for assisted living near Lodi, CA? Our small, licensed assisted living home in Manteca serves Lodi families with personalized senior care, meals, and private tours.",
     h1: "Assisted Living near Lodi, CA",
@@ -627,7 +637,9 @@ export const localPageConfigs = [
   // ── Modesto ───────────────────────────────────────────────────────────────
   {
     path: "/assisted-living-modesto-ca/",
-    title: "Assisted Living near Modesto, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near Modesto, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near Modesto, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Looking for assisted living near Modesto, CA? Our small licensed assisted living home in Manteca serves Modesto families with personalized senior care and private tours.",
     h1: "Assisted Living near Modesto, CA",
@@ -728,7 +740,9 @@ export const localPageConfigs = [
   // ── French Camp ──────────────────────────────────────────────────────────
   {
     path: "/senior-care-home-french-camp-ca/",
-    title: "Senior Care Home near French Camp, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near French Camp, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near French Camp, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Serving families from French Camp, our small senior care home near French Camp provides personalized assisted living support in a warm residential home in Manteca, CA.",
     h1: "Senior Care Home near French Camp, CA",
@@ -763,7 +777,9 @@ export const localPageConfigs = [
   // ── Escalon ───────────────────────────────────────────────────────────────
   {
     path: "/senior-care-home-escalon-ca/",
-    title: "Senior Care Home near Escalon, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near Escalon, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near Escalon, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Serving families from Escalon, our small senior care home near Escalon provides personalized assisted living support in a warm, licensed home in Manteca, CA.",
     h1: "Senior Care Home near Escalon, CA",
@@ -798,7 +814,9 @@ export const localPageConfigs = [
   // ── Riverbank ─────────────────────────────────────────────────────────────
   {
     path: "/senior-care-home-riverbank-ca/",
-    title: "Senior Care Home near Riverbank, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near Riverbank, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near Riverbank, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Serving families from Riverbank, our small senior care home near Riverbank provides personalized assisted living support in a warm, licensed residential home in Manteca, CA.",
     h1: "Senior Care Home near Riverbank, CA",
@@ -833,7 +851,9 @@ export const localPageConfigs = [
   // ── Oakdale ───────────────────────────────────────────────────────────────
   {
     path: "/senior-care-home-oakdale-ca/",
-    title: "Senior Care Home near Oakdale, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near Oakdale, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near Oakdale, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Serving families from Oakdale, our small senior care home near Oakdale provides personalized assisted living support in a warm, licensed residential home in Manteca, CA.",
     h1: "Senior Care Home near Oakdale, CA",
@@ -868,7 +888,9 @@ export const localPageConfigs = [
   // ── Ceres ─────────────────────────────────────────────────────────────────
   {
     path: "/senior-care-home-ceres-ca/",
-    title: "Senior Care Home near Ceres, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near Ceres, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near Ceres, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Serving families from Ceres, our small senior care home near Ceres provides personalized assisted living support in a warm, licensed residential home in Manteca, CA.",
     h1: "Senior Care Home near Ceres, CA",
@@ -903,7 +925,9 @@ export const localPageConfigs = [
   // ── Livermore ─────────────────────────────────────────────────────────────
   {
     path: "/senior-care-home-livermore-ca/",
-    title: "Senior Care Home near Livermore, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near Livermore, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near Livermore, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Serving families from Livermore, our small senior care home near Livermore offers personalized assisted living support in a warm, licensed residential home in Manteca, CA.",
     h1: "Senior Care Home near Livermore, CA",
@@ -938,7 +962,9 @@ export const localPageConfigs = [
   // ── Pleasanton ────────────────────────────────────────────────────────────
   {
     path: "/senior-care-home-pleasanton-ca/",
-    title: "Senior Care Home near Pleasanton, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near Pleasanton, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near Pleasanton, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Serving families from Pleasanton, our small senior care home near Pleasanton offers personalized assisted living support in a warm, licensed residential home in Manteca, CA.",
     h1: "Senior Care Home near Pleasanton, CA",
@@ -973,7 +999,9 @@ export const localPageConfigs = [
   // ── Dublin ────────────────────────────────────────────────────────────────
   {
     path: "/senior-care-home-dublin-ca/",
-    title: "Senior Care Home near Dublin, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near Dublin, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near Dublin, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Serving families from Dublin, our small senior care home near Dublin offers personalized assisted living support in a warm, licensed residential home in Manteca, CA.",
     h1: "Senior Care Home near Dublin, CA",
@@ -1008,7 +1036,9 @@ export const localPageConfigs = [
   // ── San Ramon ─────────────────────────────────────────────────────────────
   {
     path: "/senior-care-home-san-ramon-ca/",
-    title: "Senior Care Home near San Ramon, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living near San Ramon, CA | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living near San Ramon, CA? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Serving families from San Ramon, our small senior care home near San Ramon offers personalized assisted living support in a warm, licensed residential home in Manteca, CA.",
     h1: "Senior Care Home near San Ramon, CA",
@@ -1043,7 +1073,9 @@ export const localPageConfigs = [
   // ── San Joaquin County ────────────────────────────────────────────────────
   {
     path: "/assisted-living-san-joaquin-county/",
-    title: "Assisted Living in San Joaquin County, CA | At Home Comfort Assisted Living",
+    title: "Assisted Living in San Joaquin County | At Home Comfort",
+    seoDescription:
+      "Looking for assisted living in San Joaquin County? Explore our small Manteca care home, daily support, meals, and private tours for your family.",
     description:
       "Serving families across San Joaquin County, our small licensed assisted living home in Manteca offers personalized senior care, meals, medication routines, and private tours.",
     h1: "Assisted Living in San Joaquin County, CA",
@@ -1075,3 +1107,9 @@ export const localPageConfigs = [
     ],
   },
 ];
+
+// One primary assisted-living destination per service area; retain established URLs.
+export const assistedLivingAreas = cityHubs.map(hub => ({
+  ...hub,
+  linkLabel: hub.label === "Manteca" ? "Assisted living in Manteca" : hub.label === "San Joaquin County" ? "Assisted living in San Joaquin County" : `Assisted living near ${hub.label}`,
+}));

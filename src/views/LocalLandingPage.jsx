@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { T, F } from "../tokens";
-import { localPageConfigs, cityHubs } from "../data/localPages";
-import { buildLocalBusinessSchema } from "../seo/schema";
+import { cityHubs } from "../data/localPages";
 import { Section } from "../components/ui/Section";
 import { SectionHeader } from "../components/ui/SectionHeader";
 import { SectionLabel } from "../components/ui/SectionLabel";
@@ -12,7 +11,7 @@ import { PageHero } from "../components/PageHero";
 import { CTABand } from "../components/CTABand";
 import { MicroFAQBlock } from "../components/MicroFAQ";
 
-function LocalLandingPage({ config }) {
+export function LocalLandingPage({ config }) {
   return (
     <>
       <PageSEO
@@ -25,7 +24,6 @@ function LocalLandingPage({ config }) {
           { name: "Home", path: "/" },
           { name: config.h1, path: config.path },
         ]}
-        extraSchema={[buildLocalBusinessSchema()]}
       />
       <PageHero title={config.h1} subtitle={config.description} image="/outside.jpg" alt="Exterior of At Home Comfort Assisted Living in Manteca" />
       <Section bg={T.offWhite}>
@@ -89,7 +87,7 @@ function LocalLandingPage({ config }) {
             { label: "FAQs", path: "/faqs/" },
             { label: "Schedule a Tour", path: "/schedule-a-tour/" },
           ].map((link) => (
-            <Link key={link.path} to={link.path} style={{ display: "block", background: T.white, border: `1px solid ${T.border}`, borderRadius: T.radiusLg, padding: "18px 20px", textDecoration: "none", color: T.navy, fontFamily: F.body, fontWeight: 600, textAlign: "center" }}>
+            <Link key={link.path} href={link.path} style={{ display: "block", background: T.white, border: `1px solid ${T.border}`, borderRadius: T.radiusLg, padding: "18px 20px", textDecoration: "none", color: T.navy, fontFamily: F.body, fontWeight: 600, textAlign: "center" }}>
               {link.label}
             </Link>
           ))}
@@ -107,7 +105,7 @@ function LocalLandingPage({ config }) {
               .map((hub) => (
                 <Link
                   key={hub.path}
-                  to={hub.path}
+                  href={hub.path}
                   style={{
                     fontFamily: F.body,
                     fontSize: 13.5,
@@ -130,8 +128,3 @@ function LocalLandingPage({ config }) {
     </>
   );
 }
-
-export const localLandingRoutes = localPageConfigs.map((config) => ({
-  path: config.path,
-  element: <LocalLandingPage config={config} />,
-}));

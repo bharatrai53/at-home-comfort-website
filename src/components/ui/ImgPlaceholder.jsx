@@ -1,3 +1,4 @@
+import { SiteImage } from "../SiteImage";
 import { T } from "../../tokens";
 
 export function ImgPlaceholder({ src, alt, aspect = "4/3", radius = T.radiusLg, style = {} }) {
@@ -12,7 +13,7 @@ export function ImgPlaceholder({ src, alt, aspect = "4/3", radius = T.radiusLg, 
         ...style,
       }}
     >
-      <img
+      <SiteImage
         src={src}
         alt={alt}
         loading="lazy"

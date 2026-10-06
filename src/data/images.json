@@ -1,0 +1,350 @@
+{
+  "/69E678CF-55F7-4CDB-9CE8-8251942C44B8.JPEG": {
+    "width": 493,
+    "height": 470,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/69E678CF-55F7-4CDB-9CE8-8251942C44B8_JPEG-480.webp"
+      },
+      {
+        "width": 493,
+        "src": "/optimized/69E678CF-55F7-4CDB-9CE8-8251942C44B8_JPEG-493.webp"
+      }
+    ]
+  },
+  "/IMG_1960.JPEG": {
+    "width": 2304,
+    "height": 1536,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/IMG_1960_JPEG-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/IMG_1960_JPEG-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/IMG_1960_JPEG-1600.webp"
+      }
+    ]
+  },
+  "/b.png": {
+    "width": 330,
+    "height": 200,
+    "variants": [
+      {
+        "width": 330,
+        "src": "/optimized/b_png-330.webp"
+      }
+    ]
+  },
+  "/outside.jpg": {
+    "width": 3037,
+    "height": 3236,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/outside_jpg-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/outside_jpg-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/outside_jpg-1600.webp"
+      }
+    ]
+  },
+  "/rmvbckgrnd.png": {
+    "width": 1024,
+    "height": 1024,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/rmvbckgrnd_png-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/rmvbckgrnd_png-960.webp"
+      },
+      {
+        "width": 1024,
+        "src": "/optimized/rmvbckgrnd_png-1024.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_0242.jpeg": {
+    "width": 5712,
+    "height": 4284,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_0242_jpeg-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/optimized/updatedrooms_IMG_0242_jpeg-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/optimized/updatedrooms_IMG_0242_jpeg-1600.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9689.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9689_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9689_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9700.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9700_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9700_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9709.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9709_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9709_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9713.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9713_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9713_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9721.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9721_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9721_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9726.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9726_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9726_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9732.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9732_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9732_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9739.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9739_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9739_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9743.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9743_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9743_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9749.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9749_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9749_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9753.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9753_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9753_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9759.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9759_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9759_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9760.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9760_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9760_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9762.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9762_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9762_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9763.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9763_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9763_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9766.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9766_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9766_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9771.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9771_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9771_jpg-900.webp"
+      }
+    ]
+  },
+  "/updatedrooms/IMG_9774.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/optimized/updatedrooms_IMG_9774_jpg-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/optimized/updatedrooms_IMG_9774_jpg-900.webp"
+      }
+    ]
+  }
+}

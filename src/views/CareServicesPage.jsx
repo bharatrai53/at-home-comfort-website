@@ -52,7 +52,7 @@ export function CareServicesPage() {
       </Section>
       <Section bg={T.cream}>
         <div style={{ display: "flex", gap: 56, flexWrap: "wrap", alignItems: "center" }}>
-          <div style={{ flex: "1 1 440px", minWidth: 280 }}>
+          <div style={{ flex: "1 1 440px", minWidth: "min(280px, 100%)" }}>
             <SectionHeader
               label="Our Approach"
               title="How We Personalize Care"
@@ -63,7 +63,7 @@ export function CareServicesPage() {
               Families often come to us looking for assisted living in Manteca, a small residential care home, or a more personal alternative to a larger facility. Our role is to help daily life feel manageable and dignified, from morning routines and meals to medication support and evening wind-down.
             </p>
           </div>
-          <Reveal delay={0.15} style={{ flex: "1 1 380px", minWidth: 280 }}>
+          <Reveal delay={0.15} style={{ flex: "1 1 380px", minWidth: "min(280px, 100%)" }}>
             <ImgPlaceholder src="/updatedrooms/IMG_9743.jpg" alt="Resident room prepared for personalized senior care" aspect="4/3" />
           </Reveal>
         </div>

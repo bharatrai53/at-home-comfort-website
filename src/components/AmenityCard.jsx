@@ -1,3 +1,7 @@
+"use client";
+
+import { SiteImage } from "./SiteImage";
+
 import { useState } from "react";
 import { T, F } from "../tokens";
 import { AMENITY_PHOTOS } from "../data";
@@ -30,8 +34,9 @@ export function AmenityCard({ label, delay, onClick }) {
         }}
       >
         <div style={{ height: 110, overflow: "hidden", position: "relative", background: T.creamDark }}>
-          <img
+          <SiteImage
             src={photos[0]}
+            sizes="(max-width: 400px) calc(100vw - 48px), (max-width: 640px) calc((100vw - 60px) / 2), (max-width: 1128px) calc((100vw - 88px) / 3), 347px"
             alt={`${label} at At Home Comfort Assisted Living`}
             loading="lazy"
             style={{

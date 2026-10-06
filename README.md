@@ -1,11 +1,11 @@
 # At Home Comfort Assisted Living — Website
 
-A warm, personalized website for At Home Comfort Assisted Living in Manteca, CA. Built with React + Vite.
+A warm, personalized website for At Home Comfort Assisted Living in Manteca, CA. Built with Next.js + React.
 
 ## Features
 
 - **AEO-Optimized** — Answer Engine Optimization with structured FAQ data, micro-FAQ blocks on key pages, and FAQPage JSON-LD schema
-- **SEO Routing** — Crawlable React Router URLs for core pages and local landing pages
+- **SEO Routing** — Statically generated Next.js App Router URLs for core pages and local landing pages
 - **Local SEO Pages** — Dedicated landing pages for Manteca keywords and nearby-city searches
 - **Narrative Homepage** — Editorial scroll design that tells a story as visitors scroll
 - **Responsive** — Mobile-first with sticky CTA bar and glass-effect navigation
@@ -13,9 +13,11 @@ A warm, personalized website for At Home Comfort Assisted Living in Manteca, CA.
 
 ## Tech Stack
 
-- **React 18** — Component-based UI
-- **Vite** — Fast dev server and build tool
+- **React 19** — Component-based UI
+- **Next.js App Router** — File-based routes, server-rendered metadata, and static export
 - **Inline styles** — Design tokens for consistent theming (easy to migrate to CSS modules or Tailwind later)
+
+Requires Node.js 20.9 or later.
 
 ## Getting Started
 
@@ -23,7 +25,7 @@ A warm, personalized website for At Home Comfort Assisted Living in Manteca, CA.
 # Install dependencies
 npm install
 
-# Start dev server (opens at localhost:3000)
+# Start dev server (available at localhost:3000)
 npm run dev
 
 # Build for production
@@ -37,15 +39,12 @@ npm run preview
 
 ```
 src/
-├── App.jsx          # Route definitions
-├── main.jsx         # React entry point + BrowserRouter
-├── site.jsx         # Shared UI and page components
-├── components/
-│   └── SEO.jsx      # Reusable metadata + canonical tags
-├── seo/
-│   └── schema.js    # JSON-LD schema helpers
-└── styles/
-    └── global.css   # Reset + responsive rules
+├── app/             # Next.js layouts, routes, metadata, and 404 page
+│   └── [slug]/      # Local landing pages generated at build time
+├── views/           # Existing page content components
+├── components/      # Shared UI and interactive client components
+├── seo/             # Metadata and JSON-LD helpers
+└── styles/          # Global responsive styles
 ```
 
 ## Design System
@@ -65,7 +64,7 @@ src/
 The site embeds 24 curated FAQ answers across 6 categories with:
 - Direct answer-first format (what AI engines extract)
 - Micro-FAQ accordion blocks on Home, Care & Services, Admissions, and Virtual Tour pages
-- FAQPage JSON-LD structured data for search engine parsing
+- FAQPage JSON-LD describing the visible questions and answers; Google retired FAQ rich results in May 2026
 - Natural-language questions matching how families search via AI assistants
 
 ## Deployment
@@ -74,8 +73,10 @@ Build and deploy to any static hosting:
 
 ```bash
 npm run build
-# Upload `dist/` folder to Netlify, Vercel, Cloudflare Pages, etc.
+# Upload `out/` folder to Netlify, Vercel, Cloudflare Pages, etc.
 ```
+
+The build creates `out/`; Netlify is configured to publish it. Tour requests use Netlify Forms, with detection markup in `public/tour-form.html`. Form delivery requires Netlify Forms to be enabled on the deployed site. Local preview serves static files and does not deliver requests. Other hosts require a form backend.
 
 ## SEO Validation Checklist
 
@@ -117,3 +118,11 @@ npm run build
 ## License
 
 Private — At Home Comfort Assisted Living
+
+## Next.js SEO maintenance
+
+Read [the full SEO assessment](docs/SEO-ASSESSMENT.md). Core metadata lives in `src/seo/site.js`, and local pages in `src/data/localPages.js`. Next.js generates sitemap and robots files from those routes. Omit sitemap modification dates until actual content revision dates are maintained.
+
+`npm run dev` and `npm run build` automatically generate responsive WebP assets using Sharp. `SiteImage` includes intrinsic dimensions, responsive sources, and lazy loading; above-the-fold heroes load eagerly. These build-time assets work with static hosting without an image server.
+
+After changes, run `npm run build` followed by `npm run seo:check` to validate the exported site. Native FAQ accordions and category anchor links work without JavaScript. Reveal animations keep server-rendered text visible.

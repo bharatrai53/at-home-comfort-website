@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { T, F } from "../tokens";
 import { PageSEO } from "../components/PageSEO";
 import { Section } from "../components/ui/Section";
@@ -32,7 +32,7 @@ export function NotFoundPage() {
             The page you're looking for doesn't exist or may have moved.
           </p>
           <Link
-            to="/"
+            href="/"
             style={{
               display: "inline-block",
               padding: "13px 32px",

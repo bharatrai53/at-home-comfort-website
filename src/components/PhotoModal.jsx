@@ -1,3 +1,7 @@
+"use client";
+
+import { SiteImage } from "./SiteImage";
+
 import { useEffect, useState } from "react";
 import { T, F } from "../tokens";
 
@@ -98,9 +102,10 @@ export function PhotoModal({ title, photos, onClose }) {
           </button>
         </div>
         <div style={{ position: "relative", borderRadius: T.radiusLg, overflow: "hidden", background: "rgba(0,0,0,0.4)", lineHeight: 0 }}>
-          <img
+          <SiteImage
             key={index}
             src={photos[index]}
+            loading="eager" sizes="(max-width: 640px) calc(100vw - 28px), (max-width: 928px) calc(100vw - 48px), 880px"
             alt={`${title} at At Home Comfort Assisted Living`}
             className="photo-modal-img"
             style={{ width: "100%", objectFit: "contain", display: "block", animation: "imgFade 0.3s ease" }}

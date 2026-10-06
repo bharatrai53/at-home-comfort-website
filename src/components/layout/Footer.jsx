@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { SiteImage } from "../SiteImage";
+import Link from "next/link";
 import { T, F } from "../../tokens";
 import { siteLinks } from "../../data";
 
@@ -15,8 +16,8 @@ export function Footer() {
         <div style={{ display: "flex", gap: 48, flexWrap: "wrap", marginBottom: 40 }}>
           <div style={{ flex: "1 1 260px", minWidth: 200 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
-              <img
-                src="/rmvbckgrnd.png"
+              <SiteImage
+                src="/rmvbckgrnd.png" sizes="120px"
                 alt="At Home Comfort Assisted Living logo"
                 style={{ height: 44, width: "auto", display: "block" }}
               />
@@ -55,7 +56,7 @@ export function Footer() {
             {siteLinks.slice(0, 4).map((item) => (
               <div key={item.path} style={{ marginBottom: 8 }}>
                 <Link
-                  to={item.path}
+                  href={item.path}
                   style={{ fontFamily: F.body, fontSize: 13, color: "rgba(255,255,255,0.55)", textDecoration: "none" }}
                 >
                   {item.label}
@@ -70,7 +71,7 @@ export function Footer() {
             {siteLinks.slice(4).map((item) => (
               <div key={item.path} style={{ marginBottom: 8 }}>
                 <Link
-                  to={item.path}
+                  href={item.path}
                   style={{ fontFamily: F.body, fontSize: 13, color: "rgba(255,255,255,0.55)", textDecoration: "none" }}
                 >
                   {item.label}
@@ -85,7 +86,7 @@ export function Footer() {
             {localGuideLinks.map((item) => (
               <div key={item.path} style={{ marginBottom: 8 }}>
                 <Link
-                  to={item.path}
+                  href={item.path}
                   style={{ fontFamily: F.body, fontSize: 13, color: "rgba(255,255,255,0.55)", textDecoration: "none", lineHeight: 1.5, display: "block" }}
                 >
                   {item.label}

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { T, F } from "../tokens";
 import { FAQ_DATA, AMENITY_PHOTOS } from "../data";
@@ -45,7 +47,7 @@ export function VirtualTourPage() {
         </Reveal>
         <Reveal>
           <div style={{ borderRadius: T.radiusLg, overflow: "hidden", boxShadow: "0 8px 40px rgba(26,39,68,0.12)", border: `1px solid ${T.border}` }}>
-            <iframe src="https://my.matterport.com/show/?m=jSdaLLLCrBT" width="100%" height="600" allowFullScreen allow="xr-spatial-tracking" style={{ display: "block", border: "none" }} title="At Home Comfort Virtual Tour" />
+            <iframe className="virtual-tour-frame" loading="lazy" src="https://my.matterport.com/show/?m=jSdaLLLCrBT" width="100%" height="600" allowFullScreen allow="xr-spatial-tracking" style={{ display: "block", border: "none" }} title="At Home Comfort Virtual Tour" />
           </div>
           <div style={{ textAlign: "center", marginTop: 20 }}>
             <a href="https://my.matterport.com/show/?m=jSdaLLLCrBT" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: T.navy, color: T.white, fontFamily: F.body, fontSize: 15, fontWeight: 600, padding: "13px 28px", borderRadius: T.radius, textDecoration: "none", boxShadow: "0 2px 8px rgba(26,39,68,0.15)" }}>

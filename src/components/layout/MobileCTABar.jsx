@@ -14,7 +14,7 @@ export function MobileCTABar() {
         background: "rgba(249,243,228,0.97)",
         backdropFilter: "blur(12px)",
         borderTop: `1px solid ${T.border}`,
-        padding: "10px 16px",
+        padding: "10px 16px calc(10px + env(safe-area-inset-bottom))",
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
         gap: 10,

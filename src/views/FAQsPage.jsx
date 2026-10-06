@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { T, F } from "../tokens";
 import { FAQ_DATA } from "../data";
 import { Section } from "../components/ui/Section";
 import { ButtonLink, SecondaryAnchor } from "../components/ui/Buttons";
-import { Reveal } from "../components/ui/Reveal";
 import { PageSEO } from "../components/PageSEO";
 import { PageHero } from "../components/PageHero";
 import { CTABand } from "../components/CTABand";
@@ -18,8 +16,6 @@ export function FAQsPage() {
     { key: "toursAdmissions", label: "Tours & Admissions", faqs: FAQ_DATA.toursAdmissions },
     { key: "smallHome", label: "Small-Home Living", faqs: FAQ_DATA.smallHome },
   ];
-  const [activeTab, setActiveTab] = useState("fitCare");
-  const currentCategory = categories.find((category) => category.key === activeTab);
   const allFaqs = categories.flatMap((category) => category.faqs);
 
   return (
@@ -37,39 +33,16 @@ export function FAQsPage() {
       <PageHero title="Frequently Asked Questions" subtitle="Clear answers to the questions families ask most about assisted living." />
       <Section bg={T.offWhite}>
         <div className="faq-tabs">
-          {categories.map((category) => {
-            const active = activeTab === category.key;
-            return (
-              <button
-                key={category.key}
-                onClick={() => setActiveTab(category.key)}
-                style={{
-                  width: "100%",
-                  background: active ? T.navy : T.cream,
-                  color: active ? T.white : T.textBody,
-                  border: `1.5px solid ${active ? T.navy : T.border}`,
-                  borderRadius: 100,
-                  padding: "10px 16px",
-                  fontFamily: F.body,
-                  fontSize: 13,
-                  fontWeight: active ? 600 : 400,
-                  cursor: "pointer",
-                }}
-              >
-                {category.label}
-              </button>
-            );
-          })}
+          {categories.map((category) => (
+            <a key={category.key} href={`#${category.key}`} style={{ background: T.cream, color: T.navy, border: `1px solid ${T.border}`, borderRadius: 100, padding: "10px 16px", fontFamily: F.body, fontSize: 13, textDecoration: "none", textAlign: "center" }}>{category.label}</a>
+          ))}
         </div>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <Reveal>
-            <h2 style={{ fontFamily: F.display, fontSize: 26, fontWeight: 600, color: T.navy, marginBottom: 8 }}>
-              {currentCategory.label}
-            </h2>
-            <div style={{ width: 32, height: 2, background: T.gold, borderRadius: 1, marginBottom: 28 }} />
-          </Reveal>
-          {currentCategory.faqs.map((faq) => (
-            <FAQHubItem key={`${currentCategory.key}-${faq.q}`} q={faq.q} a={faq.a} />
+          {categories.map((category) => (
+            <section key={category.key} id={category.key} style={{ scrollMarginTop: 150, marginBottom: 36 }} aria-labelledby={`${category.key}-heading`}>
+              <h2 id={`${category.key}-heading`} style={{ fontFamily: F.display, fontSize: 26, fontWeight: 600, color: T.navy, marginBottom: 8 }}>{category.label}</h2>
+              {category.faqs.map((faq) => <FAQHubItem key={faq.q} q={faq.q} a={faq.a} />)}
+            </section>
           ))}
           <div style={{ marginTop: 40, padding: "24px 28px", background: T.cream, borderRadius: T.radiusLg, border: `1px solid ${T.border}`, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
             <div>

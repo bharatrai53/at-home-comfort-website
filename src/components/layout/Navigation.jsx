@@ -1,5 +1,10 @@
+"use client";
+
+import { SiteImage } from "../SiteImage";
+
 import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { T, F } from "../../tokens";
 import { siteLinks } from "../../data";
 import { ButtonLink, SecondaryAnchor } from "../ui/Buttons";
@@ -8,7 +13,8 @@ import { Ico } from "../Icons";
 function NavLogo({ scrolled }) {
   return (
     <Link
-      to="/"
+      className="nav-logo"
+      href="/"
       style={{
         display: "flex",
         alignItems: "center",
@@ -16,8 +22,8 @@ function NavLogo({ scrolled }) {
         textDecoration: "none",
       }}
     >
-      <img
-        src="/rmvbckgrnd.png"
+      <SiteImage
+        src="/rmvbckgrnd.png" sizes="120px" loading="eager"
         alt="At Home Comfort Assisted Living logo"
         style={{
           height: scrolled ? 80 : 100,
@@ -71,7 +77,7 @@ function NavLogo({ scrolled }) {
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -81,7 +87,19 @@ export function Navigation() {
 
   useEffect(() => {
     setMobileOpen(false);
-  }, [location.pathname]);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = event => { if (event.key === "Escape") setMobileOpen(false); };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [mobileOpen]);
 
   const desktopNavStyle = ({ isActive }) => ({
     background: "none",
@@ -135,9 +153,9 @@ export function Navigation() {
           <NavLogo scrolled={scrolled} />
           <div style={{ display: "flex", alignItems: "center", gap: 2 }} className="desk-nav">
             {siteLinks.slice(0, 6).map((item) => (
-              <NavLink key={item.path} to={item.path} style={desktopNavStyle}>
+              <Link key={item.path} href={item.path} style={desktopNavStyle({ isActive: pathname === item.path })} aria-current={pathname === item.path ? "page" : undefined}>
                 {item.label}
-              </NavLink>
+              </Link>
             ))}
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -149,6 +167,8 @@ export function Navigation() {
             </ButtonLink>
             <button
               className="mob-toggle"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation"
               onClick={() => setMobileOpen((value) => !value)}
               aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
               style={{
@@ -165,7 +185,7 @@ export function Navigation() {
         </div>
       </nav>
       {mobileOpen ? (
-        <div
+        <div id="mobile-navigation" className="mobile-navigation"
           style={{
             position: "fixed",
             inset: 0,
@@ -179,10 +199,10 @@ export function Navigation() {
           }}
         >
           {siteLinks.map((item) => (
-            <NavLink
+            <Link
               key={item.path}
-              to={item.path}
-              style={({ isActive }) => ({
+              href={item.path}
+              style={((isActive) => ({
                 background: isActive ? T.goldMuted : "transparent",
                 border: "none",
                 borderRadius: T.radius,
@@ -194,10 +214,11 @@ export function Navigation() {
                 color: isActive ? T.navy : T.textBody,
                 textAlign: "center",
                 textDecoration: "none",
-              })}
+              }))(pathname === item.path)}
+              aria-current={pathname === item.path ? "page" : undefined}
             >
               {item.label}
-            </NavLink>
+            </Link>
           ))}
           <div style={{ display: "flex", gap: 10, marginTop: 16, width: "85%" }}>
             <ButtonLink to="/schedule-a-tour/" style={{ flex: 1, textAlign: "center" }}>

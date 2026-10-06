@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { T, F } from "../../tokens";
 
 export function ButtonBase({ children, style = {}, ...rest }) {
@@ -26,7 +26,7 @@ export function ButtonBase({ children, style = {}, ...rest }) {
 
 export function ButtonLink({ children, to, style = {} }) {
   return (
-    <Link to={to} style={{ textDecoration: "none" }}>
+    <Link href={to} style={{ textDecoration: "none" }}>
       <ButtonBase
         style={{
           background: T.navy,
@@ -43,7 +43,7 @@ export function ButtonLink({ children, to, style = {} }) {
 
 export function SecondaryLink({ children, to, style = {} }) {
   return (
-    <Link to={to} style={{ textDecoration: "none" }}>
+    <Link href={to} style={{ textDecoration: "none" }}>
       <ButtonBase
         style={{
           background: "transparent",

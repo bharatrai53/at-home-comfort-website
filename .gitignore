@@ -27,3 +27,10 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# Next.js
+.next/
+out/
+
+# Images generated automatically by predev/prebuild
+public/optimized/

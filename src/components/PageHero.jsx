@@ -1,3 +1,4 @@
+import { SiteImage } from "./SiteImage";
 import { T, F } from "../tokens";
 import { Reveal } from "./ui/Reveal";
 import { GoldDivider } from "./ui/GoldDivider";
@@ -18,8 +19,9 @@ export function PageHero({ title, subtitle, image, alt }) {
     >
       {image ? (
         <>
-          <img
+          <SiteImage
             src={image}
+            sizes="100vw" loading="eager" fetchPriority="high"
             alt={alt}
             style={{
               position: "absolute",

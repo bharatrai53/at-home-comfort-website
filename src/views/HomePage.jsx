@@ -1,6 +1,6 @@
+import { SiteImage } from "../components/SiteImage";
 import { T, F, W } from "../tokens";
 import { FAQ_DATA } from "../data";
-import { buildLocalBusinessSchema } from "../seo/schema";
 import { Reveal } from "../components/ui/Reveal";
 import { GoldDivider } from "../components/ui/GoldDivider";
 import { SectionLabel } from "../components/ui/SectionLabel";
@@ -59,10 +59,9 @@ export function HomePage() {
         image="https://athomecomfortliving.com/outside.jpg"
         faqs={homeFaqs}
         crumbs={[{ name: "Home", path: "/" }]}
-        extraSchema={[buildLocalBusinessSchema()]}
       />
       <div style={{ position: "relative", width: "100%", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", background: T.navy }}>
-        <img src="/updatedrooms/IMG_9762.jpg" alt="Warm living room inside At Home Comfort Assisted Living in Manteca" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.35 }} />
+        <SiteImage src="/updatedrooms/IMG_9762.jpg" sizes="100vw" fetchPriority="high" alt="Warm living room inside At Home Comfort Assisted Living in Manteca" loading="eager" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.35 }} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at center bottom, rgba(26,39,68,0.4) 0%, rgba(26,39,68,0.8) 70%)" }} />
         <div style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "120px 24px 60px", maxWidth: 760 }}>
           <Reveal>
@@ -118,12 +117,12 @@ export function HomePage() {
       <div style={{ background: T.cream, padding: "80px 24px 100px" }}>
         <div style={{ ...W }}>
           <div style={{ display: "flex", gap: 60, flexWrap: "wrap", alignItems: "stretch" }}>
-            <Reveal style={{ flex: "1 1 440px", minWidth: 280, display: "flex" }}>
+            <Reveal style={{ flex: "1 1 440px", minWidth: "min(280px, 100%)", display: "flex" }}>
               <div style={{ borderRadius: T.radiusLg, overflow: "hidden", boxShadow: "0 20px 60px rgba(26,39,68,0.12)", flex: 1, minHeight: 320 }}>
-                <img src="/outside.jpg" alt="Exterior of At Home Comfort Assisted Living in Manteca, California" loading="lazy" style={{ width: "100%", height: "100%", display: "block", objectFit: "cover", objectPosition: "center center" }} />
+                <SiteImage src="/outside.jpg" alt="Exterior of At Home Comfort Assisted Living in Manteca, California" loading="lazy" style={{ width: "100%", height: "100%", display: "block", objectFit: "cover", objectPosition: "center center" }} />
               </div>
             </Reveal>
-            <div style={{ flex: "1 1 420px", minWidth: 280 }}>
+            <div style={{ flex: "1 1 420px", minWidth: "min(280px, 100%)" }}>
               <Reveal>
                 <SectionLabel text="Why Families Choose Us" align="left" />
                 <h2 style={{ fontFamily: F.display, fontSize: "clamp(28px, 3.5vw, 38px)", fontWeight: 600, color: T.navy, lineHeight: 1.2, margin: "8px 0 16px" }}>
@@ -164,7 +163,7 @@ export function HomePage() {
       </div>
 
       <div style={{ width: "100%", aspectRatio: "21/8", overflow: "hidden", position: "relative" }}>
-        <img src="/updatedrooms/IMG_0242.jpeg" alt="Bright open common living and dining area inside At Home Comfort Assisted Living" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 40%", display: "block", filter: "contrast(1.06) saturate(1.15)" }} />
+        <SiteImage src="/updatedrooms/IMG_0242.jpeg" sizes="100vw" alt="Bright open common living and dining area inside At Home Comfort Assisted Living" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 40%", display: "block", filter: "contrast(1.06) saturate(1.15)" }} />
       </div>
 
       <div style={{ background: T.cream, padding: "100px 24px" }}>
@@ -207,18 +206,18 @@ export function HomePage() {
               Private tours help families understand the space, meet our team, and picture what daily life can feel like in a small assisted living home in Manteca, CA.
             </p>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr", gridTemplateRows: "repeat(3, 160px)", gap: 12, marginTop: 48 }}>
+          <div className="home-photo-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.5fr) minmax(0, 1fr)", gridTemplateRows: "repeat(3, 160px)", gap: 12, marginTop: 48 }}>
             <Reveal style={{ gridRow: "span 3", borderRadius: T.radiusLg, overflow: "hidden", height: "100%" }}>
-              <img src="/updatedrooms/IMG_9689.jpg" alt="Private resident bedroom at At Home Comfort Assisted Living" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <SiteImage src="/updatedrooms/IMG_9689.jpg" alt="Private resident bedroom at At Home Comfort Assisted Living" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
             </Reveal>
             <Reveal delay={0.08} style={{ borderRadius: T.radiusLg, overflow: "hidden" }}>
-              <img src="/updatedrooms/IMG_9759.jpg" alt="Shared common living area with natural light" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <SiteImage src="/updatedrooms/IMG_9759.jpg" alt="Shared common living area with natural light" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
             </Reveal>
             <Reveal delay={0.16} style={{ borderRadius: T.radiusLg, overflow: "hidden" }}>
-              <img src="/updatedrooms/IMG_9771.jpg" alt="Bright private room with comfortable furnishings" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <SiteImage src="/updatedrooms/IMG_9771.jpg" alt="Bright private room with comfortable furnishings" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
             </Reveal>
             <Reveal delay={0.24} style={{ borderRadius: T.radiusLg, overflow: "hidden" }}>
-              <img src="/updatedrooms/IMG_9766.jpg" alt="Clean private bathroom inside the home" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <SiteImage src="/updatedrooms/IMG_9766.jpg" alt="Clean private bathroom inside the home" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
             </Reveal>
           </div>
         </div>
@@ -262,7 +261,7 @@ export function HomePage() {
       <div style={{ background: T.cream, padding: "100px 24px" }}>
         <div style={{ ...W }}>
           <div style={{ display: "flex", gap: 60, flexWrap: "wrap", alignItems: "center" }}>
-            <div style={{ flex: "1 1 420px", minWidth: 280 }}>
+            <div style={{ flex: "1 1 420px", minWidth: "min(280px, 100%)" }}>
               <Reveal>
                 <SectionLabel text="Peace of Mind" align="left" />
                 <h2 style={{ fontFamily: F.display, fontSize: "clamp(28px, 3.5vw, 38px)", fontWeight: 600, color: T.navy, lineHeight: 1.2, margin: "8px 0 16px" }}>
@@ -295,9 +294,9 @@ export function HomePage() {
                 ))}
               </div>
             </div>
-            <Reveal delay={0.15} style={{ flex: "1 1 400px", minWidth: 280 }}>
+            <Reveal delay={0.15} style={{ flex: "1 1 400px", minWidth: "min(280px, 100%)" }}>
               <div style={{ borderRadius: T.radiusLg, overflow: "hidden", boxShadow: "0 20px 60px rgba(26,39,68,0.12)" }}>
-                <img src="/outside.jpg" alt="Front of the assisted living home in Manteca" loading="lazy" style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "4/5" }} />
+                <SiteImage src="/outside.jpg" alt="Front of the assisted living home in Manteca" loading="lazy" style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "4/5" }} />
               </div>
             </Reveal>
           </div>
