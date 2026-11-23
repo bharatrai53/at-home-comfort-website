@@ -121,6 +121,15 @@ export function Footer() {
             Licensed Assisted Living · Manteca, CA · San Joaquin County
           </p>
         </div>
+        <section aria-labelledby="footer-privacy-heading" style={{ borderTop: "1px solid rgba(255,255,255,0.12)", marginTop: 24, paddingTop: 24 }}>
+          <h2 id="footer-privacy-heading" style={{ fontFamily: F.body, fontSize: 12, fontWeight: 600, color: T.gold, letterSpacing: "0.08em", marginBottom: 10 }}>
+            Privacy &amp; Text Messaging
+          </h2>
+          <p style={{ fontFamily: F.body, fontSize: 12, color: "rgba(255,255,255,0.65)", lineHeight: 1.8, margin: 0 }}>
+            At Home Comfort Assisted Living values your privacy. We use your phone number only to communicate regarding inquiries, appointments, services, and care-related updates. We do not sell or share your personal information or SMS consent with third parties for marketing purposes. By opting in, you agree to receive text messages from us. Message frequency varies, and message and data rates may apply. You may reply STOP at any time to unsubscribe or HELP for assistance. For questions, contact us at{" "}
+            <a href="tel:925-605-6218" style={{ color: T.gold, textDecoration: "underline", textUnderlineOffset: 3, whiteSpace: "nowrap" }}>925-605-6218</a>.
+          </p>
+        </section>
       </div>
     </footer>
   );
