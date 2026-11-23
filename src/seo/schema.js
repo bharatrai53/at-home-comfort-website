@@ -64,3 +64,16 @@ export function buildWebsiteSchema() {
     publisher: { "@id": `${SITE_URL}/#business` },
   };
 }
+
+export function buildWebPageSchema({ title, description, path, image }) {
+  const url = new URL(path, SITE_URL).toString();
+  return {
+    "@context": "https://schema.org",
+    "@type": path === "/about/" ? "AboutPage" : path === "/schedule-a-tour/" ? "ContactPage" : "WebPage",
+    "@id": `${url}#webpage`, url, name: title, description, inLanguage: "en-US",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    about: { "@id": `${SITE_URL}/#business` },
+    publisher: { "@id": `${SITE_URL}/#business` },
+    ...(image ? { primaryImageOfPage: { "@type": "ImageObject", url: new URL(image, SITE_URL).toString() } } : {}),
+  };
+}

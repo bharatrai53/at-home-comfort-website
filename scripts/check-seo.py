@@ -47,6 +47,10 @@ for url in urls:
     assert any(s.get('@type') == 'BreadcrumbList' for s in page.schemas), path
     assert any(s.get('@type') == 'WebSite' for s in page.schemas), path
     assert sum(s.get('@type') == 'LocalBusiness' for s in page.schemas) == 1, path
+    webpage = [s for s in page.schemas if s.get('@type') in ('WebPage', 'AboutPage', 'ContactPage')]
+    assert len(webpage) == 1 and webpage[0]['url'] == url, path
+    assert webpage[0]['about']['@id'] == 'https://athomecomfortliving.com/#business', path
+    assert webpage[0]['isPartOf']['@id'] == 'https://athomecomfortliving.com/#website', path
     for t, a in page.tags:
         if t == 'img':
             assert a.get('alt') is not None and a.get('width') and a.get('height'), (path, a)
@@ -63,7 +67,7 @@ while queue:
     if path in visited: continue
     visited.add(path)
     queue += [urlparse(a['href']).path for t, a in pages[path].tags if t == 'a' and a.get('href', '').startswith('/') and urlparse(a['href']).path in pages]
-print(f'Crawl note: {len(set(pages) - visited)} supporting local pages are in the sitemap but lack a homepage crawl path.')
+assert visited == set(pages), f'Orphan pages: {set(pages) - visited}'
 faq = pages['/faqs/']
 faq_schemas = [s for s in faq.schemas if s.get('@type') == 'FAQPage']
 assert len(faq_schemas) == 1
@@ -75,7 +79,7 @@ assert '/tour-form.html' not in urls
 assert 'Sitemap: https://athomecomfortliving.com/sitemap.xml' in (out / 'robots.txt').read_text()
 hero = next(a for t, a in pages['/'].tags if t == 'img' and 'IMG_9762' in a.get('src', ''))
 assert hero.get('loading') == 'eager' and hero.get('fetchpriority') == 'high'
-print(f'PASS: {len(pages)} pages; unique metadata, one h1, schemas, all FAQ text in HTML, links/assets, crawl discovery audit, robots, noindex utility pages, responsive images, hero priority.')
+print(f'PASS: {len(pages)} pages; unique metadata, one h1, schemas, all FAQ text in HTML, links/assets, complete crawl reachability, robots, noindex utility pages, responsive images, hero priority.')
 
 # Check the exported pages against the intended non-branded search targets.
 assert [h.strip() for h in pages['/'].headings] == ['Where Comfort Feels Like Home']
@@ -88,3 +92,7 @@ for area in areas:
     business = next(s for s in page.schemas if s.get('@type') == 'LocalBusiness')
     assert business['address']['addressLocality'] == 'Manteca'
 print(f'PASS: Original homepage headline and assisted-living metadata for {len(areas)} served areas; actual Manteca business location preserved.')
+
+size = json.loads(check_output(['node', '--input-type=module', '-e', 'import sharp from "sharp"; const m = await sharp("out/optimized/social-home.jpg").metadata(); console.log(JSON.stringify([m.width,m.height]));'], text=True))
+assert size == [1200, 630]
+print('PASS: linked WebPage identities, zero orphan pages, and 1200x630 social image.')

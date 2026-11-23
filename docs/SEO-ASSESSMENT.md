@@ -91,3 +91,7 @@ All changes are local and reviewable; they have not been published. Build genera
 ## Owner-directed presentation correction
 
 The original homepage headline/body copy and local headings, introductions, descriptions shown on the page, and FAQ titles have been restored. The new homepage location directory and added related-care section were removed. Assisted-living titles and search descriptions remain in metadata; separate seoDescription fields avoid changing visible subtitles. Original city-link text is preserved. No invisible keyword links were added. This supersedes earlier claims about direct homepage links to every served area and modified visible headings. Crawl validation now reports supporting pages that are in the sitemap but not reachable through existing page links.
+
+## October 15 follow-up
+
+The discovery gap described above is now resolved: a compact, collapsed footer directory provides normal links to every existing local guide, without altering homepage content sections. Export checks require complete internal reachability. Verification metadata and linked WebPage entities are prepared, and default sharing images use a generated 1200×630 photo. See [the follow-up](SEO-FOLLOWUP-2026-10-15.md). The verified full business address still requires owner input.

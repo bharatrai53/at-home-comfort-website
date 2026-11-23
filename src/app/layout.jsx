@@ -7,6 +7,10 @@ export const metadata = {
   metadataBase: new URL("https://athomecomfortliving.com"),
   icons: { icon: "/rmvbckgrnd.png", apple: "/rmvbckgrnd.png" },
   manifest: "/manifest.json",
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+    other: process.env.BING_SITE_VERIFICATION ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION } : undefined,
+  },
 };
 export const viewport = { themeColor: "#C49A52" };
 

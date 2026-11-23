@@ -2,6 +2,7 @@ import { SiteImage } from "../SiteImage";
 import Link from "next/link";
 import { T, F } from "../../tokens";
 import { siteLinks } from "../../data";
+import { localPageConfigs } from "../../data/localPages";
 
 const localGuideLinks = [
   { label: "Assisted Living in Manteca, CA", path: "/assisted-living-manteca-ca/" },
@@ -93,6 +94,16 @@ export function Footer() {
                 </Link>
               </div>
             ))}
+            <details style={{ marginTop: 12, fontFamily: F.body, fontSize: 13, color: "rgba(255,255,255,0.65)" }}>
+              <summary style={{ cursor: "pointer", lineHeight: 1.8 }}>Browse all local guides</summary>
+              <ul style={{ listStyle: "none", padding: 0, marginTop: 12 }}>
+                {localPageConfigs.map(page => (
+                  <li key={page.path} style={{ marginBottom: 10 }}>
+                    <Link href={page.path} prefetch={false} style={{ color: "inherit", textDecoration: "none", lineHeight: 1.5 }}>{page.h1}</Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
           </div>
           <div style={{ flex: "1 1 220px", minWidth: 180 }}>
             <div style={{ fontFamily: F.body, fontSize: 10, fontWeight: 700, color: T.gold, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 14 }}>

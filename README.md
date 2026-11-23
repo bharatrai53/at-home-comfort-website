@@ -126,3 +126,7 @@ Read [the full SEO assessment](docs/SEO-ASSESSMENT.md). Core metadata lives in `
 `npm run dev` and `npm run build` automatically generate responsive WebP assets using Sharp. `SiteImage` includes intrinsic dimensions, responsive sources, and lazy loading; above-the-fold heroes load eagerly. These build-time assets work with static hosting without an image server.
 
 After changes, run `npm run build` followed by `npm run seo:check` to validate the exported site. Native FAQ accordions and category anchor links work without JavaScript. Reveal animations keep server-rendered text visible.
+
+### Search-engine verification
+
+Google Business Profile is not required to set up Search Console. Set `GOOGLE_SITE_VERIFICATION` (Google HTML-tag content value) and optionally `BING_SITE_VERIFICATION` in the Netlify build environment, then redeploy before clicking Verify. See `.env.example` and [the October SEO follow-up](docs/SEO-FOLLOWUP-2026-10-15.md). DNS verification for a domain property is a separate option. Verification is prepared, not automatically completed.

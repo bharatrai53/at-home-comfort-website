@@ -29,5 +29,9 @@ async function walk(dir) {
   }
 }
 await walk(publicDir);
+// Static sharing card: an actual facility photo, cropped to standard social dimensions.
+await sharp(path.join(publicDir, 'outside.jpg')).rotate()
+  .resize(1200, 630, { fit: 'cover', position: 'south' }).jpeg({ quality: 85 })
+  .toFile(path.join(output, 'social-home.jpg'));
 await writeFile('src/data/images.json', JSON.stringify(manifest, null, 2) + '\n');
 console.log(`Prepared responsive WebP images for ${Object.keys(manifest).length} originals.`);

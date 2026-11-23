@@ -1,8 +1,8 @@
 import SEO from "./SEO";
-import { buildBreadcrumbSchema, buildFaqSchema } from "../seo/schema";
+import { buildBreadcrumbSchema, buildFaqSchema, buildWebPageSchema } from "../seo/schema";
 
 export function PageSEO({ title, description, path, image, faqs, crumbs, extraSchema = [] }) {
-  const schemas = [buildBreadcrumbSchema(crumbs), ...extraSchema];
+  const schemas = [buildWebPageSchema({ title, description, path, image }), buildBreadcrumbSchema(crumbs), ...extraSchema];
   if (faqs?.length) {
     schemas.push(buildFaqSchema(faqs));
   }
